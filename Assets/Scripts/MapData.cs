@@ -7,8 +7,7 @@ using UnityEngine;
 public class MapData : ScriptableObject
 {
     public string mapName;
-    public int numTiles = 10;
     public List<Vector3Int> tileList;
     public List<bool> hasPlant;
-    public List<GameObject> plantObject;
+    public List<float> height;
 }

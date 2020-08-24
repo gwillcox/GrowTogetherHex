@@ -9,6 +9,7 @@ using UnityEngine.Tilemaps;
 [ExecuteInEditMode]
 public class GameController : MonoBehaviour
 {
+    public bool running;
     public Tilemap tilemap;
     public MapData mapData;
     public List<TileController.Tile> tiles = new List<TileController.Tile>();
@@ -17,10 +18,14 @@ public class GameController : MonoBehaviour
     public GameObject plant;
     public int sunDirectionInt;
 
+    public GameObject mapObj;
+    public Mesh mapMesh;
+
     // Start is called before the first frame update
     void Start()
     {
         CreateMap();
+        InvokeRepeating("StepTime", 1f, 1f);
     }
 
     private void ClearMap()
@@ -40,7 +45,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < mapData.tileList.Count; i++)
         {
             Vector3Int tilePosition = mapData.tileList[i];
-            TileController.Tile newTile = new TileController.Tile(tilePosition, tilemap);
+            TileController.Tile newTile = new TileController.Tile(tilePosition, tilemap, mapObj, mapMesh);
             tiles.Add(newTile);
             if (mapData.hasPlant[i])
             {
@@ -158,10 +163,13 @@ public class GameController : MonoBehaviour
     // steps time by  changing the sun's position and having each plant grow or die. 
     public void StepTime()
     {
+        if (!running) { return; }
         sunDirectionInt = (sunDirectionInt + 1) % 6;
         CalculateShade();
         GrowPlants();
 
+        // Then, draw shade to make the update look right. 
+        CalculateShade();
     }
 
 }
