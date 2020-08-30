@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -336,12 +336,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7706228085b58cd4e83d0ef8d2ad5062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  running: 0
   tilemap: {fileID: 0}
   mapData: {fileID: 11400000, guid: bd0ef122743a8784fbf5686c2d15e862, type: 2}
   illuminatedTile: {fileID: 11400000, guid: 45e46da3af3a9b942bfa1c16821a28a0, type: 2}
   shadedTile: {fileID: 11400000, guid: 5e43fee120a26db45a78e780f9d0bf0a, type: 2}
   plant: {fileID: 4325076405227855668, guid: 2160c8ab616df7940ae5e64c1ddc119f, type: 3}
   sunDirectionInt: 0
+  mapObj: {fileID: 3466263768061607724}
+  mapMesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1014843322
 Transform:
   m_ObjectHideFlags: 0
@@ -368,14 +371,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c229103e801134c9404086cb323e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSize: 25
+  name: BONGO
+  worldSize: 20
   map: {fileID: 11400000, guid: bd0ef122743a8784fbf5686c2d15e862, type: 2}
   mapMesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
   heightScale: 10
-  noiseFrequency: 1.07
-  octaves: 5
-  persistence: 0.384
-  xBias: 48.6
+  noiseFrequency: 0.5
+  octaves: 10
+  persistence: 0.586
+  xBias: 19.5
   yBias: 73.1
 --- !u!1 &1653895405
 GameObject:
@@ -554,6 +558,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3466263767396063069, guid: b26993930f68700479c2ff6c5ecd63cb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49c185839cb3c1f4bbddc36cddd102a0, type: 2}
     - target: {fileID: 3466263767396063071, guid: b26993930f68700479c2ff6c5ecd63cb,
         type: 3}
       propertyPath: m_Name
@@ -561,3 +570,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26993930f68700479c2ff6c5ecd63cb, type: 3}
+--- !u!1 &3466263768061607724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3466263767396063071, guid: b26993930f68700479c2ff6c5ecd63cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3466263768061607723}
+  m_PrefabAsset: {fileID: 0}

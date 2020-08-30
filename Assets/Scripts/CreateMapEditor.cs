@@ -13,5 +13,9 @@ public class CreateMapEditor : Editor
         {
             createMap.RecreateMap();
         }
+        if (GUILayout.Button("Save"))
+        {
+            createMap.SaveMap();
+        }
     }
 }

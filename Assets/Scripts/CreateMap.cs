@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -6,17 +7,18 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class CreateMap : MonoBehaviour
 {
+    public string name;
     public int worldSize;
     public MapData map;
     public Mesh mapMesh;
 
-    [Range(0.1f, 10.0f)]
+    [Range(0.1f, 20.0f)]
     public float heightScale;
 
     [Range(0.0f, 10.0f)]
     public float noiseFrequency;
 
-    [Range(1, 5)]
+    [Range(1, 10)]
     public int octaves;
 
     [Range(0.0f, 1f)]
@@ -155,6 +157,20 @@ public class CreateMap : MonoBehaviour
         RecalculateHeights();
         mapMesh.vertices = CalculateVertexes();
         mapMesh.RecalculateNormals();
+    }
+
+    public void SaveMap()
+    {
+        Mesh mCopy = new Mesh();
+        mCopy.vertices = mapMesh.vertices;
+        mCopy.normals = mapMesh.normals;
+        mCopy.name = name;
+        mCopy.colors = mapMesh.colors;
+        mCopy.triangles = mapMesh.triangles;
+
+        mCopy.RecalculateNormals();
+
+        AssetDatabase.CreateAsset(mCopy, "Assets/Prefabs/map" + name);
     }
 
 }
