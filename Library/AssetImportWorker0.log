@@ -1,0 +1,1451 @@
+[Licensing::Module] Successfully connected to LicensingClient on channel: LicenseClient-Gregg
+Entitlement-based licensing initiated
+[LicensingClient] Licenses Updated successfully in LicensingClient
+
+LICENSE SYSTEM [2020831 10:31:55] Next license update check is after 2020-08-29T20:12:47
+
+Built from '2019.4/release' branch; Version is '2019.4.0f1 (0af376155913) revision 717686'; Using compiler version '191627012'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 12154 MB
+[Licensing::Module] Serial number assigned to: "F4-UQ8S-Y7XS-7Y92-939X-XXXX"\nBatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Gregg Willcox/Desktop/games/GrowTogetherHex
+-logFile
+Library/AssetImportWorker0.log
+-srvPort
+58105
+Successfully changed project path to: C:/Users/Gregg Willcox/Desktop/games/GrowTogetherHex
+C:/Users/Gregg Willcox/Desktop/games/GrowTogetherHex
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 129.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2019.4.0f1 (0af376155913)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Gregg Willcox/Desktop/games/GrowTogetherHex/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 620 (ID=0x5916)
+    Vendor:   
+    VRAM:     6077 MB
+    Driver:   22.20.16.4836
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56644
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.007205 seconds.
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 62.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.251 seconds
+Registering precompiled user dll's ...
+Registered in 0.179426 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 67.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  1.115 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 3.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2501 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 104.2 MB.
+System memory in use after: 101.0 MB.
+
+Unloading 100 unused Assets to reduce memory usage. Loaded Objects now: 2814.
+Total: 7.500856 ms (FindLiveObjects: 0.629068 ms CreateObjectMapping: 0.215449 ms MarkObjects: 3.445415 ms  DeleteObjects: 3.210220 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Bongo.asset
+  artifactKey: Guid(bd0ef122743a8784fbf5686c2d15e862) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Bongo.asset using Guid(bd0ef122743a8784fbf5686c2d15e862) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/d278092090e20b345acf5dcb8612619e.asset.1.index for Assets/Bongo.asset with Types
+Done importing asset: 'Assets/Bongo.asset' (target hash: '94d59797400d161d7b814b5559fc0933') in 0.174769 seconds
+  Import took 0.191400 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001459 seconds.
+  path: Assets/Materials/EyeMaterial.mat
+  artifactKey: Guid(0d13e9b10a2e18c44ab6885a699de579) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/EyeMaterial.mat using Guid(0d13e9b10a2e18c44ab6885a699de579) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f9e9212a075c54345adcaded92ec7f77.asset.1.index for Assets/Materials/EyeMaterial.mat with Types
+Done importing asset: 'Assets/Materials/EyeMaterial.mat' (target hash: '8348f21599b6cd637743a5b3267ca59a') in 0.623192 seconds
+  Import took 0.639587 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/HexSpriteTiles_Setup/Materials/PlaneMat.mat
+  artifactKey: Guid(52429ab309411b64ba1fcfdfbf127822) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Materials/PlaneMat.mat using Guid(52429ab309411b64ba1fcfdfbf127822) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/17829994eff9b6445a80dbb917285862.asset.1.index for Assets/HexSpriteTiles_Setup/Materials/PlaneMat.mat with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Materials/PlaneMat.mat' (target hash: '68ef71eeb42a0eaa0c0acd3f60de4d9d') in 0.782266 seconds
+  Import took 0.999002 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000614 seconds.
+  path: Assets/Scripts/Old/HexController.cs
+  artifactKey: Guid(9ce565d8706f54545b37f8a9f19868cc) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/Old/HexController.cs using Guid(9ce565d8706f54545b37f8a9f19868cc) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ee2cb353509278d4b8b269c180567ed0.asset.1.index for Assets/Scripts/Old/HexController.cs with Types
+Done importing asset: 'Assets/Scripts/Old/HexController.cs' (target hash: '35febd6488393dad61c5b88c84991e93') in 0.183787 seconds
+  Import took 0.191287 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000454 seconds.
+  path: Assets/HexSpriteTiles_Setup/Misc/PPP_HexWorld.asset
+  artifactKey: Guid(f1eb0871f05333e4f8c3dd330eaffa03) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Misc/PPP_HexWorld.asset using Guid(f1eb0871f05333e4f8c3dd330eaffa03) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/387774614cba5f9449523fe260ed3ebe.asset.1.index for Assets/HexSpriteTiles_Setup/Misc/PPP_HexWorld.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Misc/PPP_HexWorld.asset' (target hash: '73caf7335138da0186caff013c9d9070') in 0.020956 seconds
+  Import took 0.027412 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000390 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_10.asset
+  artifactKey: Guid(db462c207fe8f604e9b763d154761daa) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_10.asset using Guid(db462c207fe8f604e9b763d154761daa) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/42cc5e2396eddbf4185ec1504e462952.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_10.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_10.asset' (target hash: 'de4f95b4a11652a4ce72aeeb6ec6a68f') in 0.016181 seconds
+  Import took 0.023310 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000401 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_BLANK.png
+  artifactKey: Guid(8199c5ef781b3b842a2432aad7077b72) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_BLANK.png using Guid(8199c5ef781b3b842a2432aad7077b72) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/4bafd4f9dc62fb04885568f76bc67c9f.asset.1.index for Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_BLANK.png with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_BLANK.png' (target hash: 'a40f55a009a86a00890bf173ea0cb7f4') in 0.162992 seconds
+  Import took 0.169772 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000393 seconds.
+  path: Assets/TestMap.asset
+  artifactKey: Guid(1aa7acfef06b45a46a1221d60789b38a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/TestMap.asset using Guid(1aa7acfef06b45a46a1221d60789b38a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/b86352a369bb3804d84b0928409fc060.asset.1.index for Assets/TestMap.asset with Types
+Done importing asset: 'Assets/TestMap.asset' (target hash: '4b843686955103d1c895be9d9b1a49c3') in 0.028291 seconds
+  Import took 0.035839 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000473 seconds.
+  path: Assets/Scripts/Old/HexCell.cs
+  artifactKey: Guid(eaa8a75c6849cc9419cedd54e1c27681) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/Old/HexCell.cs using Guid(eaa8a75c6849cc9419cedd54e1c27681) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/7f323ef489f59bc49862470efe2ceb4b.asset.1.index for Assets/Scripts/Old/HexCell.cs with Types
+Done importing asset: 'Assets/Scripts/Old/HexCell.cs' (target hash: '1cd8786168c26fd9e18f17959cca4e6f') in 0.021035 seconds
+  Import took 0.030794 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000480 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_28.asset
+  artifactKey: Guid(a67bd92ff0dbd794ab173e17c50bb8ab) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_28.asset using Guid(a67bd92ff0dbd794ab173e17c50bb8ab) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/028c3054545aba74da54ea87388c2d5f.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_28.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_28.asset' (target hash: '47fe959cddf66e8456f5651001e366b3') in 0.032720 seconds
+  Import took 0.041415 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Scripts/MapData.cs
+  artifactKey: Guid(5c7c49b69ba742e45a38b1c845c011e3) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/MapData.cs using Guid(5c7c49b69ba742e45a38b1c845c011e3) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/c595a1ebb7c6f174283a28510fb304d6.asset.1.index for Assets/Scripts/MapData.cs with Types
+Done importing asset: 'Assets/Scripts/MapData.cs' (target hash: 'b61937f71cf8a141341925c13f87d15b') in 0.047480 seconds
+  Import took 0.057130 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_31.asset
+  artifactKey: Guid(3dd8cca2b3af95240ad8e047bd2b9c52) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_31.asset using Guid(3dd8cca2b3af95240ad8e047bd2b9c52) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/e596b7eebed20b24788e99fdb10d6d23.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_31.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_31.asset' (target hash: 'dc63a2b2ea71e53020da41d2db391a59') in 0.061241 seconds
+  Import took 0.084641 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.039760 seconds.
+  path: Assets/Scripts/CreateMapEditor.cs
+  artifactKey: Guid(89ebe4edb58e27849a85b7119f380201) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/CreateMapEditor.cs using Guid(89ebe4edb58e27849a85b7119f380201) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/5a3369cce12ac504ca12eef270bfc870.asset.1.index for Assets/Scripts/CreateMapEditor.cs with Types
+Done importing asset: 'Assets/Scripts/CreateMapEditor.cs' (target hash: '10a536c2ceda03c2eb29688483cde0f2') in 0.076642 seconds
+  Import took 0.089474 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002623 seconds.
+  path: Assets/Prefabs/HexTiles.prefab
+  artifactKey: Guid(31cecb1862bc5bb49ad0ba77bdb9bfcb) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/HexTiles.prefab using Guid(31cecb1862bc5bb49ad0ba77bdb9bfcb) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/4dc6759ab496599429bbca64141cf7d0.asset.1.index for Assets/Prefabs/HexTiles.prefab with Types
+Done importing asset: 'Assets/Prefabs/HexTiles.prefab' (target hash: '3ed9c80f852ec748b3384b044918164f') in 1.020671 seconds
+  Import took 1.037955 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000529 seconds.
+  path: Assets/Scripts/PlantClass.cs
+  artifactKey: Guid(0d6129ccf2e37c24ea16154f381966be) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/PlantClass.cs using Guid(0d6129ccf2e37c24ea16154f381966be) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/072bbaff383669542af7e134e885a338.asset.1.index for Assets/Scripts/PlantClass.cs with Types
+Done importing asset: 'Assets/Scripts/PlantClass.cs' (target hash: 'cf3eb27c26207f8d26d32e36009f96ad') in 0.144696 seconds
+  Import took 0.474943 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004219 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_52.asset
+  artifactKey: Guid(7512d662760adfd42b5652b4923e1412) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_52.asset using Guid(7512d662760adfd42b5652b4923e1412) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/e021329fdde22024ea333a79a1a100e3.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_52.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_52.asset' (target hash: '2b4ff5558f4ea2ced50caf0410ded021') in 0.051145 seconds
+  Import took 0.066414 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002767 seconds.
+  path: Assets/Scenes/TetstWorldGen.unity
+  artifactKey: Guid(71bca6c3b587f644e9d37328559c8082) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/TetstWorldGen.unity using Guid(71bca6c3b587f644e9d37328559c8082) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/b014d59fc2aae31419e308ad0830b4e2.asset.1.index for Assets/Scenes/TetstWorldGen.unity with Types
+Done importing asset: 'Assets/Scenes/TetstWorldGen.unity' (target hash: '4c08fae1f5ae8e85988452ef6c5aeca4') in 0.131470 seconds
+  Import took 0.141904 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001498 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_30.asset
+  artifactKey: Guid(efa0746e22137b84d80d07546f16f6ea) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_30.asset using Guid(efa0746e22137b84d80d07546f16f6ea) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/66c8ee0e034030843b0c596b884b8a78.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_30.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_30.asset' (target hash: 'db7af518ba576a3580f411081e00a84d') in 0.025281 seconds
+  Import took 0.035304 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000842 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/2edb0b4b05bd4004b824dd5acdfce883.asset.1.index for Assets/Scenes/SampleScene.unity with Types
+Done importing asset: 'Assets/Scenes/SampleScene.unity' (target hash: 'd123d1d791be8e9a193718e4dd794273') in 0.019380 seconds
+  Import took 0.028157 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000496 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_21.asset
+  artifactKey: Guid(5e91353867c143f46b86e42d8c6b9c47) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_21.asset using Guid(5e91353867c143f46b86e42d8c6b9c47) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/e85e58a48d3135f42931f9fc1f08d6dd.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_21.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_21.asset' (target hash: '3d282ddf6161b68585eccb5e8744d9aa') in 0.024798 seconds
+  Import took 0.035895 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_22.asset
+  artifactKey: Guid(89c61bba129d3b340965409303e76054) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_22.asset using Guid(89c61bba129d3b340965409303e76054) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ed739bc2be398ee44a73e9a023154fcc.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_22.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_22.asset' (target hash: 'c88181ec7fcad8397e5d8f40d39f0301') in 0.065113 seconds
+  Import took 0.080443 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000569 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_18.asset
+  artifactKey: Guid(e27b328bec2ec564495383e5378f6ce6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_18.asset using Guid(e27b328bec2ec564495383e5378f6ce6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/e09b389ea25d74f40b6360e3b33e6eb5.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_18.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_18.asset' (target hash: 'b29b6b8dc18e21ee454c88bc54d50e1a') in 0.035403 seconds
+  Import took 0.043938 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/Scripts/GameController.cs
+  artifactKey: Guid(7706228085b58cd4e83d0ef8d2ad5062) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/GameController.cs using Guid(7706228085b58cd4e83d0ef8d2ad5062) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/98f4b6a1e8ca0404b9a4af7783599852.asset.1.index for Assets/Scripts/GameController.cs with Types
+Done importing asset: 'Assets/Scripts/GameController.cs' (target hash: '179a5ef15b63861a5bf318d476cb9de7') in 0.032033 seconds
+  Import took 0.041680 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000506 seconds.
+  path: Assets/HexSpriteTiles_Setup/Misc/PPP_Myprofile.asset
+  artifactKey: Guid(83d43f6408985004b89285215021d743) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Misc/PPP_Myprofile.asset using Guid(83d43f6408985004b89285215021d743) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/e7d442e3ecedca04e8b882963d89a725.asset.1.index for Assets/HexSpriteTiles_Setup/Misc/PPP_Myprofile.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Misc/PPP_Myprofile.asset' (target hash: '44f40082fb5a6e4ece191ebc00899a69') in 0.384250 seconds
+  Import took 0.394971 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000568 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_12.asset
+  artifactKey: Guid(8b03d3313f5ed4b41b58576f8e7071f8) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_12.asset using Guid(8b03d3313f5ed4b41b58576f8e7071f8) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/0237cb5b76775cb48b134190860fca96.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_12.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_12.asset' (target hash: '5e00f7e6d7e469a2fd38a7f0990b0f22') in 0.040204 seconds
+  Import took 0.049045 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000602 seconds.
+  path: Assets/Materials/WorldMaterial.mat
+  artifactKey: Guid(49c185839cb3c1f4bbddc36cddd102a0) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/WorldMaterial.mat using Guid(49c185839cb3c1f4bbddc36cddd102a0) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/3de9310000d6f784e9f4c1113bed8800.asset.1.index for Assets/Materials/WorldMaterial.mat with Types
+Done importing asset: 'Assets/Materials/WorldMaterial.mat' (target hash: 'ef89dc23a4faae7ee7ee85dd4b40020a') in 0.032115 seconds
+  Import took 0.058906 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000699 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_20.asset
+  artifactKey: Guid(0f7be247a798aed4e8f4f4b80d53e196) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_20.asset using Guid(0f7be247a798aed4e8f4f4b80d53e196) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/8e63b9a6f077a7f4babe041f64d64e1e.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_20.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_20.asset' (target hash: '45b49e8d046d57c35e642514a7a278b2') in 0.041572 seconds
+  Import took 0.059012 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000522 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A_backup.png
+  artifactKey: Guid(da9d6752771285a40a1b383e61336090) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A_backup.png using Guid(da9d6752771285a40a1b383e61336090) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f80aca1762637fb4e9ca96bc77d695c5.asset.1.index for Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A_backup.png with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A_backup.png' (target hash: '64280bf092c03b43dc4a9d13514546ff') in 1.042611 seconds
+  Import took 1.105669 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000555 seconds.
+  path: Assets/Scenes/Forest.unity
+  artifactKey: Guid(87ce67859aa23cc46a56091d12c1c812) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/Forest.unity using Guid(87ce67859aa23cc46a56091d12c1c812) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/b624dcc81fcefca4890f54ba470d8c13.asset.1.index for Assets/Scenes/Forest.unity with Types
+Done importing asset: 'Assets/Scenes/Forest.unity' (target hash: '4d9d2873be572836a921cd582db38291') in 0.040373 seconds
+  Import took 0.111527 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002110 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_4.asset
+  artifactKey: Guid(9e5cd1888a26c634c8f3984b2719f3dc) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_4.asset using Guid(9e5cd1888a26c634c8f3984b2719f3dc) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/d6ade0e1f88595748befe3555a263bef.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_4.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_4.asset' (target hash: '6fc818d39040a4da74f073ba358ff2ba') in 0.079834 seconds
+  Import took 0.096167 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000543 seconds.
+  path: Assets/HexSpriteTiles_Setup/Scenes/SampleScene.unity
+  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Scenes/SampleScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/9617d6104c0af804e85994a0eefb312f.asset.1.index for Assets/HexSpriteTiles_Setup/Scenes/SampleScene.unity with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Scenes/SampleScene.unity' (target hash: '232505b88a87bca5a70d03b3304fe983') in 0.152769 seconds
+  Import took 0.167645 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000579 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A.png
+  artifactKey: Guid(ac1645b9b895a8c4a9f8d5b744dcf28b) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A.png using Guid(ac1645b9b895a8c4a9f8d5b744dcf28b) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/c7523b5d44eea934ebc7168cc30ce2e0.asset.1.index for Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A.png with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/SpriteSets/HexTile_Sheet_1A.png' (target hash: '9655412f00af4f147c373e675afb510a') in 0.405125 seconds
+  Import took 0.431449 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002208 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_56.asset
+  artifactKey: Guid(57ef125d103b7a149a183d4149a538c5) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_56.asset using Guid(57ef125d103b7a149a183d4149a538c5) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ba661d79ee7a39240a8cf79cf92fa774.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_56.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_56.asset' (target hash: 'ebac3dd9e74ffc3f77fe177c862f6b80') in 0.099309 seconds
+  Import took 0.117409 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000457 seconds.
+  path: Assets/Rendering/pipeline_Renderer.asset
+  artifactKey: Guid(ac878396596d0ec4b8a4890016c08b97) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Rendering/pipeline_Renderer.asset using Guid(ac878396596d0ec4b8a4890016c08b97) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/376a932b98361274eb10c719cd7524d1.asset.1.index for Assets/Rendering/pipeline_Renderer.asset with Types
+Done importing asset: 'Assets/Rendering/pipeline_Renderer.asset' (target hash: '62df335cff6e333d44e24e0657320614') in 0.136125 seconds
+  Import took 0.148289 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000449 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_1.asset
+  artifactKey: Guid(8159beeb24e86ef48af9c5d32499d627) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_1.asset using Guid(8159beeb24e86ef48af9c5d32499d627) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/63ace7a1d69352e41bcfb3e9caa308b5.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_1.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_1.asset' (target hash: '0d5e3d5349689cd5f3c04d03276160b5') in 0.022604 seconds
+  Import took 0.035301 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000450 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_0.asset
+  artifactKey: Guid(7e7f67fdd393ac544a98bd24ff8f14d4) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_0.asset using Guid(7e7f67fdd393ac544a98bd24ff8f14d4) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/5f199cf5233ae5b4da392a59da0ca258.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_0.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_0.asset' (target hash: 'd5b16200422435d6bdffec791b37a409') in 0.025144 seconds
+  Import took 0.036306 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Rendering/pipeline.asset
+  artifactKey: Guid(655543f857677564c8cecaad71b39bcb) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Rendering/pipeline.asset using Guid(655543f857677564c8cecaad71b39bcb) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/3beb651eb10f09043a39f8428f0a92b5.asset.1.index for Assets/Rendering/pipeline.asset with Types
+Done importing asset: 'Assets/Rendering/pipeline.asset' (target hash: '1c174043daf00c1f3e57c411bf89c993') in 0.115518 seconds
+  Import took 0.130890 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexPalette_Blank.prefab
+  artifactKey: Guid(18910458c712c2c46a546ebaa637fc53) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexPalette_Blank.prefab using Guid(18910458c712c2c46a546ebaa637fc53) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f6222891c2ec59f4999791961da31725.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexPalette_Blank.prefab with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexPalette_Blank.prefab' (target hash: '48d3f0c10633b4d16d9e3c82b2c96db4') in 0.019279 seconds
+  Import took 0.030768 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000976 seconds.
+  path: Assets/Materials/Invisible.mat
+  artifactKey: Guid(79bb697b9f7ab0249bcb9bfd17d14ab5) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/Invisible.mat using Guid(79bb697b9f7ab0249bcb9bfd17d14ab5) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/1a0b15a73a070224bae6298b1bb56c51.asset.1.index for Assets/Materials/Invisible.mat with Types
+Done importing asset: 'Assets/Materials/Invisible.mat' (target hash: 'eb6fa3eafec7c28bf72123860b6f40ac') in 0.026078 seconds
+  Import took 0.038455 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000653 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_25.asset
+  artifactKey: Guid(bdaa6054c3d7bf84fa94f7a3ba7afdda) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_25.asset using Guid(bdaa6054c3d7bf84fa94f7a3ba7afdda) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ee8192039f5ed4d4b90aef1dadf84fdd.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_25.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_25.asset' (target hash: '0556f0dfeeb46eea339208f9c29cbfb0') in 0.034876 seconds
+  Import took 0.049938 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000443 seconds.
+  path: Assets/Prefabs/PlantCylinder.prefab
+  artifactKey: Guid(a865970c58283c247b6f11cb991b0057) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/PlantCylinder.prefab using Guid(a865970c58283c247b6f11cb991b0057) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ed253860800039f40af95b859b7386d6.asset.1.index for Assets/Prefabs/PlantCylinder.prefab with Types
+Done importing asset: 'Assets/Prefabs/PlantCylinder.prefab' (target hash: '13de76ab42a304a6e339ee38dabe2786') in 0.022382 seconds
+  Import took 0.032845 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000441 seconds.
+  path: Assets/Scripts/Old/HexMetrics.cs
+  artifactKey: Guid(e060870a580fca54e92ca108b24f6c41) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/Old/HexMetrics.cs using Guid(e060870a580fca54e92ca108b24f6c41) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/fa96578559781d847b20ccc25fd6dc1d.asset.1.index for Assets/Scripts/Old/HexMetrics.cs with Types
+Done importing asset: 'Assets/Scripts/Old/HexMetrics.cs' (target hash: 'c360f602c5f65a5a4876acea282d6139') in 0.030618 seconds
+  Import took 0.038253 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000788 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_42.asset
+  artifactKey: Guid(94c0585b308895d4b9d452aacd51a4d6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_42.asset using Guid(94c0585b308895d4b9d452aacd51a4d6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/e6e2f662c91045d4ea0e56d5b8a2721e.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_42.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_42.asset' (target hash: 'a0283130f57117e13373141fcf8b6c43') in 0.026635 seconds
+  Import took 0.037227 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000443 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_16.asset
+  artifactKey: Guid(c0729448d6b13b945a409b898d2930f4) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_16.asset using Guid(c0729448d6b13b945a409b898d2930f4) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/1e42d24b942d8ef428f367c8a86a2188.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_16.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_16.asset' (target hash: 'ea72e7aa093b7adee2247fce2effbded') in 0.020340 seconds
+  Import took 0.034160 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000370 seconds.
+  path: Assets/Scripts/CreateMap.cs
+  artifactKey: Guid(d4c229103e801134c9404086cb323e62) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/CreateMap.cs using Guid(d4c229103e801134c9404086cb323e62) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/5e182247eee56f94bace58cb76c0e7ea.asset.1.index for Assets/Scripts/CreateMap.cs with Types
+Done importing asset: 'Assets/Scripts/CreateMap.cs' (target hash: 'b192a2934e64c59ab884b03164554ebe') in 0.039152 seconds
+  Import took 0.053702 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000438 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_14.asset
+  artifactKey: Guid(1f683450dd00d6a4797e1ffd14224f56) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_14.asset using Guid(1f683450dd00d6a4797e1ffd14224f56) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/aa9a9401e8b756f4ab727af7ee6e9416.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_14.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_14.asset' (target hash: '5049a8f28571d84f3a9cffd91c1886ca') in 0.018518 seconds
+  Import took 0.025952 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Materials/TerrainShader.shadergraph
+  artifactKey: Guid(6e6db8c60be27504b85c24d562d20575) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/TerrainShader.shadergraph using Guid(6e6db8c60be27504b85c24d562d20575) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/2584845dfd25fc04dbc501512f7a2516.asset.1.index for Assets/Materials/TerrainShader.shadergraph with Types
+Done importing asset: 'Assets/Materials/TerrainShader.shadergraph' (target hash: 'a28b583330135be3e1d8ef315fa52bc7') in 0.045854 seconds
+  Import took 0.054438 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003813 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_6.asset
+  artifactKey: Guid(2b8c2b9b06b0296499ea76924390ffd6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_6.asset using Guid(2b8c2b9b06b0296499ea76924390ffd6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/90dfe26381d3ada48a18eb11270f2dbe.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_6.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_6.asset' (target hash: '68b77ac47e95d5e2d0852c8b49131e1f') in 0.038924 seconds
+  Import took 0.716812 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000466 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_55.asset
+  artifactKey: Guid(5e43fee120a26db45a78e780f9d0bf0a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_55.asset using Guid(5e43fee120a26db45a78e780f9d0bf0a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/1a2b3dec256a4ce49b3998227c948b54.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_55.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_55.asset' (target hash: 'd34e65e0d5a9a4de14e97f50b07a7db4') in 0.126112 seconds
+  Import took 0.508816 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001539 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_7.asset
+  artifactKey: Guid(fde271316ec1933499fdf2f5c8193a70) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_7.asset using Guid(fde271316ec1933499fdf2f5c8193a70) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/d09728ff9af0f1644add9c82e102d8b1.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_7.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_7.asset' (target hash: '7ce78f1f5333dd9c9b96346bac65eebe') in 0.047419 seconds
+  Import took 0.063153 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001113 seconds.
+  path: Assets/Prefabs/WorldMesh.prefab
+  artifactKey: Guid(29dfeee78958c26409615afbe6db2c4a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/WorldMesh.prefab using Guid(29dfeee78958c26409615afbe6db2c4a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/d253b669bdc82494cbaa46809d62c094.asset.1.index for Assets/Prefabs/WorldMesh.prefab with Types
+Done importing asset: 'Assets/Prefabs/WorldMesh.prefab' (target hash: 'c5d61d3535303d2e8a46d62f675be850') in 0.039342 seconds
+  Import took 0.056072 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000480 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_37.asset
+  artifactKey: Guid(d31ba6d2f0bf1cd4cb1d1b5b1c6c60cb) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_37.asset using Guid(d31ba6d2f0bf1cd4cb1d1b5b1c6c60cb) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/9beb3e3a237fd9741bf47d1bc470ec1e.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_37.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_37.asset' (target hash: 'f38b51133c7e390ace01d75cb5526a06') in 0.095717 seconds
+  Import took 0.111582 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000841 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/BigRock.png
+  artifactKey: Guid(ebd0fad1f8519ac4fad952408262c97c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/BigRock.png using Guid(ebd0fad1f8519ac4fad952408262c97c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/0c6a7dc0c16412f459a4a1e0f37b0dfe.asset.1.index for Assets/HexSpriteTiles_Setup/SpriteSets/BigRock.png with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/SpriteSets/BigRock.png' (target hash: '2cca8123d39bdb77b985d5f4ac3ad237') in 0.078841 seconds
+  Import took 0.095264 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000840 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_13.asset
+  artifactKey: Guid(3b58c0b4df653b64ca98929bba2e0310) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_13.asset using Guid(3b58c0b4df653b64ca98929bba2e0310) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/9cd413c3dfb6cd04c8ccab94f844cb04.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_13.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_13.asset' (target hash: '6d3b72002d03cfa0728a8bcf3037f37f') in 0.041648 seconds
+  Import took 0.070657 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000483 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_32.asset
+  artifactKey: Guid(9aea4e93a1724054485d59e77ec8e360) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_32.asset using Guid(9aea4e93a1724054485d59e77ec8e360) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/a42183e04a7d3a24f9f397a0e2b17bd9.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_32.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_32.asset' (target hash: '26f3cfcfd61eef1bb94021de01180b4f') in 0.026677 seconds
+  Import took 0.037629 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Prefabs/GreenPlant.prefab
+  artifactKey: Guid(2160c8ab616df7940ae5e64c1ddc119f) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/GreenPlant.prefab using Guid(2160c8ab616df7940ae5e64c1ddc119f) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/dee818cd4b6f18f4b961987aba5db232.asset.1.index for Assets/Prefabs/GreenPlant.prefab with Types
+Done importing asset: 'Assets/Prefabs/GreenPlant.prefab' (target hash: '6a1d5823557f89916bdd0d93c89aecee') in 0.018347 seconds
+  Import took 0.030140 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000450 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_11.asset
+  artifactKey: Guid(64d247b2bc4e78d4fb6a5268c4c4e930) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_11.asset using Guid(64d247b2bc4e78d4fb6a5268c4c4e930) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/67f157ac68d72aa42812c8ff201117ee.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_11.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_11.asset' (target hash: '1a5f68e369523b9eb802671de03d4b0b') in 0.045878 seconds
+  Import took 0.074105 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_46.asset
+  artifactKey: Guid(663393c1afc5871469ac09277480a019) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_46.asset using Guid(663393c1afc5871469ac09277480a019) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/b65f2731a7fdda147baf8df25c3b8924.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_46.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_46.asset' (target hash: '02bde8dd669cd30d09f0fc170a13baf3') in 0.062145 seconds
+  Import took 0.074179 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000499 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_23.asset
+  artifactKey: Guid(89372a8eda8c78e4ab9778b277dd611e) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_23.asset using Guid(89372a8eda8c78e4ab9778b277dd611e) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/aeb79be3ae0d29542b144aba3138d57a.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_23.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_23.asset' (target hash: '028ce5a0e47cec0b0ac9f357e7ed41b4') in 0.157686 seconds
+  Import took 0.177288 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000475 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_17.asset
+  artifactKey: Guid(a1d2b613f41fab147822d2f745b45349) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_17.asset using Guid(a1d2b613f41fab147822d2f745b45349) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/98e3937ede2734a4b8d09d2adedc8d8b.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_17.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_17.asset' (target hash: 'cccf9f5bd078aa31ef535637a11a762c') in 0.042453 seconds
+  Import took 0.253490 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000479 seconds.
+  path: Assets/Planet/PlanetMenuEditor.cs
+  artifactKey: Guid(1b6d25ecdb5ae3a4bbfa7115e1220339) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Planet/PlanetMenuEditor.cs using Guid(1b6d25ecdb5ae3a4bbfa7115e1220339) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/74bd4db6218477b479484027b6f41aff.asset.1.index for Assets/Planet/PlanetMenuEditor.cs with Types
+Done importing asset: 'Assets/Planet/PlanetMenuEditor.cs' (target hash: 'e84a6a41590efb454c3ed65185508604') in 0.039134 seconds
+  Import took 0.063166 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000545 seconds.
+  path: Assets/Materials/EggBoyMaterial.mat
+  artifactKey: Guid(0011c6af1af0ae64b9fed16baaf00381) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/EggBoyMaterial.mat using Guid(0011c6af1af0ae64b9fed16baaf00381) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/a5387a5b05142214e82a600d04e482b3.asset.1.index for Assets/Materials/EggBoyMaterial.mat with Types
+Done importing asset: 'Assets/Materials/EggBoyMaterial.mat' (target hash: 'e965a73cd6e72ee52b98a4740375f9ac') in 0.046305 seconds
+  Import took 0.080979 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000477 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_3.asset
+  artifactKey: Guid(71be31d7bce3ed441971c7f80862ad6a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_3.asset using Guid(71be31d7bce3ed441971c7f80862ad6a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/50ce6bbf7084695439290c7a4b497ee2.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_3.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_3.asset' (target hash: '91f99631368f29a69e33b65c9d1f691c') in 0.044392 seconds
+  Import took 0.054478 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Assets/Scripts/movement.cs
+  artifactKey: Guid(f49af93ef5dfa174687a01a5379020b7) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/movement.cs using Guid(f49af93ef5dfa174687a01a5379020b7) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/9dc791b2e7f034a40acabf335c297eda.asset.1.index for Assets/Scripts/movement.cs with Types
+Done importing asset: 'Assets/Scripts/movement.cs' (target hash: '7bdafc7f38a0f69f319b5bbe8fcb7d82') in 0.023106 seconds
+  Import took 0.042535 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000571 seconds.
+  path: Assets/Scripts/Old/HexElement.cs
+  artifactKey: Guid(a934dcb22151a6646b140b7c49604cff) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/Old/HexElement.cs using Guid(a934dcb22151a6646b140b7c49604cff) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/caa0c9ed8e97d0147bdc91a309f30752.asset.1.index for Assets/Scripts/Old/HexElement.cs with Types
+Done importing asset: 'Assets/Scripts/Old/HexElement.cs' (target hash: '47bd8f4b561cc7191d7e2558ba1a6a83') in 0.054439 seconds
+  Import took 0.066790 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 337.111426 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_15.asset
+  artifactKey: Guid(d523dcb7c47833c42a12660784c7c82b) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_15.asset using Guid(d523dcb7c47833c42a12660784c7c82b) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/4e8759566333f3a4c9ffecc6f59a060f.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_15.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_15.asset' (target hash: '1dda3dcb5412ad1a4fac98fd106bfbe3') in 0.035063 seconds
+  Import took 0.043370 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000482 seconds.
+  path: Assets/Scenes/TetstWorldGen.unity
+  artifactKey: Guid(71bca6c3b587f644e9d37328559c8082) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/TetstWorldGen.unity using Guid(71bca6c3b587f644e9d37328559c8082) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/0489bf1f9aa394b44942e3e94f3a73d6.asset.1.index for Assets/Scenes/TetstWorldGen.unity with Types
+Done importing asset: 'Assets/Scenes/TetstWorldGen.unity' (target hash: '1b4f7559f3cca08de15259c99ca5b7a6') in 0.034149 seconds
+  Import took 0.043558 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000466 seconds.
+  path: Assets/Scenes/Forest.unity
+  artifactKey: Guid(87ce67859aa23cc46a56091d12c1c812) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/Forest.unity using Guid(87ce67859aa23cc46a56091d12c1c812) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/34a411d8e71b4ac4f9dde32ca66f4843.asset.1.index for Assets/Scenes/Forest.unity with Types
+Done importing asset: 'Assets/Scenes/Forest.unity' (target hash: 'd1dabae2d71fd081b9f82615a8a299bf') in 0.025883 seconds
+  Import took 0.039835 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000511 seconds.
+  path: Assets/Prefabs/WorldMesh.prefab
+  artifactKey: Guid(29dfeee78958c26409615afbe6db2c4a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/WorldMesh.prefab using Guid(29dfeee78958c26409615afbe6db2c4a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/86f78fe1452d739438629727cee67bbc.asset.1.index for Assets/Prefabs/WorldMesh.prefab with Types
+Done importing asset: 'Assets/Prefabs/WorldMesh.prefab' (target hash: 'a2b587ef9e297715d7d04489235f13e5') in 0.808640 seconds
+  Import took 0.822590 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/Scripts/rotateCamera.cs
+  artifactKey: Guid(0c47e760309a6744b8de6bb2e629b0bf) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/rotateCamera.cs using Guid(0c47e760309a6744b8de6bb2e629b0bf) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f85cbf7adf98fed45b112e3fb09d9114.asset.1.index for Assets/Scripts/rotateCamera.cs with Types
+Done importing asset: 'Assets/Scripts/rotateCamera.cs' (target hash: '2d4994398cae5ace89be437432dc93b6') in 0.033501 seconds
+  Import took 0.049000 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002055 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_48.asset
+  artifactKey: Guid(5dc856f79cebec54c8a2886dee522e51) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_48.asset using Guid(5dc856f79cebec54c8a2886dee522e51) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/2325bdc207f8ce34286af7df67f12fb5.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_48.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_48.asset' (target hash: '728fbdd8c59a817cf9bdb4a1006f5d4c') in 0.035982 seconds
+  Import took 0.048278 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001426 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_49.asset
+  artifactKey: Guid(f570949cdbe5cee43a95ac972755bcce) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_49.asset using Guid(f570949cdbe5cee43a95ac972755bcce) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/85454caa201fcb3498933f27dd745a93.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_49.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_49.asset' (target hash: '5b808c76935b59a786be9091cf827f4c') in 0.032365 seconds
+  Import took 0.045286 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000924 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_51.asset
+  artifactKey: Guid(6142e07302b5b1248935d4e445939d69) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_51.asset using Guid(6142e07302b5b1248935d4e445939d69) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/46bec32458d485c479d47c0f562e6a40.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_51.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_51.asset' (target hash: '0dc78210923782b4fc0e76058215c643') in 0.028164 seconds
+  Import took 0.036172 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_43.asset
+  artifactKey: Guid(93f97f72d49f72c419a2c66d40bff5d0) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_43.asset using Guid(93f97f72d49f72c419a2c66d40bff5d0) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/0090151bdc7024145aac126181a44467.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_43.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_43.asset' (target hash: 'dbdb9555a3efd47849e9dba7af67faf5') in 0.026666 seconds
+  Import took 0.046053 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000502 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_53.asset
+  artifactKey: Guid(2ce586f732854a9418012b73c4033288) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_53.asset using Guid(2ce586f732854a9418012b73c4033288) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/9360ebbefdba77243971097cac9c9293.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_53.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_53.asset' (target hash: '83028fd075a47bd7f6a632e461b6a30b') in 0.031682 seconds
+  Import took 0.042821 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000424 seconds.
+  path: Assets/Prefabs/EggBoy.prefab
+  artifactKey: Guid(6fe21bfb8ec90c348bd6a7d150c33d9c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/EggBoy.prefab using Guid(6fe21bfb8ec90c348bd6a7d150c33d9c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ff910cb2d8fb18c45b9db7db990a37f7.asset.1.index for Assets/Prefabs/EggBoy.prefab with Types
+Done importing asset: 'Assets/Prefabs/EggBoy.prefab' (target hash: '352d4383325a7e4769654184469b2eaf') in 0.028022 seconds
+  Import took 0.036320 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_8.asset
+  artifactKey: Guid(56a55ce20d1b7684daa52ffb7841277c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_8.asset using Guid(56a55ce20d1b7684daa52ffb7841277c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/7cf125a29d29ef04388b7917f35c0d93.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_8.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_8.asset' (target hash: '4575608b1f0e75c1285114bbee3fce51') in 0.035407 seconds
+  Import took 0.046340 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000489 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_38.asset
+  artifactKey: Guid(e84282925628c124780daca54f3e7bc6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_38.asset using Guid(e84282925628c124780daca54f3e7bc6) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/04264a665a856fc458f9761989abf3f8.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_38.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_38.asset' (target hash: 'e98fa448771fc3536a1dbb8796885c12') in 0.023968 seconds
+  Import took 0.039597 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000564 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_54.asset
+  artifactKey: Guid(45e46da3af3a9b942bfa1c16821a28a0) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_54.asset using Guid(45e46da3af3a9b942bfa1c16821a28a0) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/666fd8109163bbc44878bff173c5b3e1.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_54.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_54.asset' (target hash: 'aba57126117257e4a191187f1fddcaee') in 0.052746 seconds
+  Import took 0.076163 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_33.asset
+  artifactKey: Guid(d491f794ce748f74e9e9b31f0db87e7c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_33.asset using Guid(d491f794ce748f74e9e9b31f0db87e7c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/4a2e4ab1ad1217940863b9afcd3ab434.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_33.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_33.asset' (target hash: '000e90eef7fef3058e9e26bc300ff002') in 0.066151 seconds
+  Import took 0.089718 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002809 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_35.asset
+  artifactKey: Guid(c64da7c2bc6ebea43ad84e2ce114eb34) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_35.asset using Guid(c64da7c2bc6ebea43ad84e2ce114eb34) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/4b8083e3c7882a14cadcffa1e11af9a2.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_35.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_35.asset' (target hash: 'f82d248aeaec2b6b814e4e210da56b64') in 0.040863 seconds
+  Import took 0.062341 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000464 seconds.
+  path: Assets/Materials/PlantMaterial.mat
+  artifactKey: Guid(31cb6a43be612d441b6ae85dbd8022ad) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/PlantMaterial.mat using Guid(31cb6a43be612d441b6ae85dbd8022ad) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/392e4766a7c1f6249940beb8dcb99e20.asset.1.index for Assets/Materials/PlantMaterial.mat with Types
+Done importing asset: 'Assets/Materials/PlantMaterial.mat' (target hash: 'd4f00fbffc3851081bb1b12a7a029ed3') in 0.064354 seconds
+  Import took 0.076965 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000544 seconds.
+  path: Assets/Scripts/MapEditor.cs
+  artifactKey: Guid(d9d96acf7dfa2384e9ed43f813a5e195) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/MapEditor.cs using Guid(d9d96acf7dfa2384e9ed43f813a5e195) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/bef5715e46c8d6442b71db1b0fac7bec.asset.1.index for Assets/Scripts/MapEditor.cs with Types
+Done importing asset: 'Assets/Scripts/MapEditor.cs' (target hash: '9d636522d801a1eff501be6c1f0cb3e3') in 0.027541 seconds
+  Import took 0.047541 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012129 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_41.asset
+  artifactKey: Guid(57771bb8b4a143d48a1e4977e4f5da7d) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_41.asset using Guid(57771bb8b4a143d48a1e4977e4f5da7d) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/6373e633044407f47ba97a5256839738.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_41.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_41.asset' (target hash: '058d10d4c8bad60575307c20df899ee7') in 0.039222 seconds
+  Import took 0.052350 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000468 seconds.
+  path: Assets/Scenes/Planet.unity
+  artifactKey: Guid(160e02a33bbf2574686454811d7b3ef1) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/Planet.unity using Guid(160e02a33bbf2574686454811d7b3ef1) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/c0c6de7ea327a774f8367854614338a8.asset.1.index for Assets/Scenes/Planet.unity with Types
+Done importing asset: 'Assets/Scenes/Planet.unity' (target hash: '486c0240dea8b26b5fd779bdb80f9b87') in 0.018765 seconds
+  Import took 0.032332 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001040 seconds.
+  path: Assets/Scripts/Tile.cs
+  artifactKey: Guid(8bd3fa9641b9bff4d92db890696011fd) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/Tile.cs using Guid(8bd3fa9641b9bff4d92db890696011fd) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/2d1d0a1a2efc02e448e2bd53d3410f0a.asset.1.index for Assets/Scripts/Tile.cs with Types
+Done importing asset: 'Assets/Scripts/Tile.cs' (target hash: '7a4ffc82c1474678ff02da94333721e1') in 0.017944 seconds
+  Import took 0.027220 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002656 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_9.asset
+  artifactKey: Guid(20246a90f5f4ed44eb9b6e880827c255) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_9.asset using Guid(20246a90f5f4ed44eb9b6e880827c255) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/a5cd1b3a2ecbe444387506cda93e7510.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_9.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_9.asset' (target hash: '57b96daf96b54ed2dc233790dde38606') in 0.023387 seconds
+  Import took 0.036318 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_36.asset
+  artifactKey: Guid(0847c1de4e460db44a46f9e80f1214a2) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_36.asset using Guid(0847c1de4e460db44a46f9e80f1214a2) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/89baa95e4b89d9744812866d72580cd0.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_36.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_36.asset' (target hash: 'b53165b1c459fe8d59c2e3a90ac4245b') in 0.025349 seconds
+  Import took 0.035636 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_47.asset
+  artifactKey: Guid(12acfb00e4d7381488e02094de454674) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_47.asset using Guid(12acfb00e4d7381488e02094de454674) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ace9b493b2200d24b996a3af69233fd9.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_47.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_47.asset' (target hash: '22cb823c74edff0b1b6ccbc111c3e108') in 0.021408 seconds
+  Import took 0.034264 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000486 seconds.
+  path: Assets/Materials/TerrainMaterial.mat
+  artifactKey: Guid(e2de97c9aba48b846b5a62568a927f14) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/TerrainMaterial.mat using Guid(e2de97c9aba48b846b5a62568a927f14) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f615914fbb4019b4a965fa223e258d40.asset.1.index for Assets/Materials/TerrainMaterial.mat with Types
+Done importing asset: 'Assets/Materials/TerrainMaterial.mat' (target hash: 'b8c2f6cb3500240a5be351b4bc97ba4f') in 0.024440 seconds
+  Import took 0.033313 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000468 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_40.asset
+  artifactKey: Guid(c2afde80fd432204f92a671c6277e84c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_40.asset using Guid(c2afde80fd432204f92a671c6277e84c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/b84f6703a803a6241a682145978e1723.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_40.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_40.asset' (target hash: '63ac30317586bbeb837f1a8b50cb4227') in 0.025701 seconds
+  Import took 0.034382 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000528 seconds.
+  path: Assets/Prefabs/HexPlane.prefab
+  artifactKey: Guid(da3989afa8f38794eaf73ed90d9c43ef) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/HexPlane.prefab using Guid(da3989afa8f38794eaf73ed90d9c43ef) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/1babc6d52d94c2e4195548902f61b093.asset.1.index for Assets/Prefabs/HexPlane.prefab with Types
+Done importing asset: 'Assets/Prefabs/HexPlane.prefab' (target hash: '7077a321f2f38d5cd33dc3d71917b8cd') in 0.018715 seconds
+  Import took 0.025733 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000471 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_44.asset
+  artifactKey: Guid(5db65c36fc0937d4c8c61abbb501ccae) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_44.asset using Guid(5db65c36fc0937d4c8c61abbb501ccae) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ad0792f1bdaeeee4683239e2bd1303d7.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_44.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_44.asset' (target hash: '5fe8f43f8dbec903e8f748594f969265') in 0.019924 seconds
+  Import took 0.033005 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000422 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_29.asset
+  artifactKey: Guid(e5fdfd134bc5c6c4487564e91edef32a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_29.asset using Guid(e5fdfd134bc5c6c4487564e91edef32a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f1699b131432ff6448cb7812ba38634f.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_29.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_29.asset' (target hash: '9003f07768213356dff7af1b84b18371') in 0.028611 seconds
+  Import took 0.035446 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000511 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_5.asset
+  artifactKey: Guid(b86726698d5846847847e4c0c18fb366) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_5.asset using Guid(b86726698d5846847847e4c0c18fb366) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/72570611d69fff344b6c4823cd7eba09.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_5.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_5.asset' (target hash: '793d53ace0ff3622343ec175b563dc87') in 0.023703 seconds
+  Import took 0.031385 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/Scripts/Old/HexGrid.cs
+  artifactKey: Guid(12401ee4bf0ff6543a21abbd2f2f5429) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scripts/Old/HexGrid.cs using Guid(12401ee4bf0ff6543a21abbd2f2f5429) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/acee3deb05dbfe84e9d589bade3f88a8.asset.1.index for Assets/Scripts/Old/HexGrid.cs with Types
+Done importing asset: 'Assets/Scripts/Old/HexGrid.cs' (target hash: 'd4aad029357d7ec0827da8e64aa14b95') in 0.197080 seconds
+  Import took 0.237663 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_27.asset
+  artifactKey: Guid(e6aae5aeaedf0534f9b7ad5088b6a580) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_27.asset using Guid(e6aae5aeaedf0534f9b7ad5088b6a580) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/7756c0fc00eba654a864ab289bb09a22.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_27.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_27.asset' (target hash: '77882314b5093a9d0443766d987f284e') in 0.030662 seconds
+  Import took 0.047305 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000404 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_19.asset
+  artifactKey: Guid(acc87c72f567a994b870a1c3987b709a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_19.asset using Guid(acc87c72f567a994b870a1c3987b709a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/6b7a1613e625aab4c8f5085542aba604.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_19.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_19.asset' (target hash: '929e3f151d5646c8e9fb849b19816557') in 0.054304 seconds
+  Import took 0.075322 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000519 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_34.asset
+  artifactKey: Guid(6454893e84d58bf4798aa400d8f7f884) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_34.asset using Guid(6454893e84d58bf4798aa400d8f7f884) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/7288493e83b27aa49ac3b00566c03fda.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_34.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_34.asset' (target hash: '4d88e1ff84b4a4ca2efe16d62ffe22c2') in 0.027244 seconds
+  Import took 0.062845 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001081 seconds.
+  path: Assets/HexSpriteTiles_Setup/SpriteSets/ExtraProps.png
+  artifactKey: Guid(14aefffd3622c7347aad64f2bed35801) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/SpriteSets/ExtraProps.png using Guid(14aefffd3622c7347aad64f2bed35801) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/a0ab515b067128949934db66f3dff75b.asset.1.index for Assets/HexSpriteTiles_Setup/SpriteSets/ExtraProps.png with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/SpriteSets/ExtraProps.png' (target hash: '73ce702103ec6b9d19e030b7767d050f') in 0.038201 seconds
+  Import took 0.047534 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000510 seconds.
+  path: Assets/Rendering/ForceField.shadergraph
+  artifactKey: Guid(24586bca4945bab4c939abcdb2d78362) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Rendering/ForceField.shadergraph using Guid(24586bca4945bab4c939abcdb2d78362) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/93b11db8c746576438559e08406ac657.asset.1.index for Assets/Rendering/ForceField.shadergraph with Types
+Done importing asset: 'Assets/Rendering/ForceField.shadergraph' (target hash: '41d6e5efafd69a784b7dbea367e11b76') in 0.024176 seconds
+  Import took 0.036640 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000406 seconds.
+  path: Assets/Scenes/EggBoy View.unity
+  artifactKey: Guid(37cb124b92605e143a7b46446e8fb899) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/EggBoy View.unity using Guid(37cb124b92605e143a7b46446e8fb899) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/d49b94ac63790ab42acfc22e8659efa3.asset.1.index for Assets/Scenes/EggBoy View.unity with Types
+Done importing asset: 'Assets/Scenes/EggBoy View.unity' (target hash: '5143dab8889d87435ef8a69cf8be2fdf') in 0.023757 seconds
+  Import took 0.034006 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_50.asset
+  artifactKey: Guid(8ae7b2687777af34199872a5c4716b4e) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_50.asset using Guid(8ae7b2687777af34199872a5c4716b4e) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/124f4f1e9ae85dd43afaab47f79a1d42.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_50.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_50.asset' (target hash: 'ae63f06708adb0219c5795b7ee1345e0') in 0.021107 seconds
+  Import took 0.035031 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000768 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_45.asset
+  artifactKey: Guid(de9a93975e060294fb45d4ed69a052c5) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_45.asset using Guid(de9a93975e060294fb45d4ed69a052c5) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/36815aa9c2f98634883cb8215a673244.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_45.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_45.asset' (target hash: 'e236c02fcefc2cb0407ba0e129139d4e') in 0.024207 seconds
+  Import took 0.032381 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000546 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_2.asset
+  artifactKey: Guid(3a55a6ef722978149a260ffb86757e3c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_2.asset using Guid(3a55a6ef722978149a260ffb86757e3c) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/f68e5a41b2deb054a804c1138e26a46b.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_2.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_2.asset' (target hash: '0bf16ae022a2d96d5fa3c137ce86a9fe') in 0.044863 seconds
+  Import took 0.058073 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000677 seconds.
+  path: Assets/Materials/Hex Material.mat
+  artifactKey: Guid(ea6f6af815b8cf1449a9c57970432e25) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/Hex Material.mat using Guid(ea6f6af815b8cf1449a9c57970432e25) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/1d558b1498877374f8e5de1c66de2f6c.asset.1.index for Assets/Materials/Hex Material.mat with Types
+Done importing asset: 'Assets/Materials/Hex Material.mat' (target hash: 'd65c20334fe54826a1a50b74ceade91e') in 0.511936 seconds
+  Import took 0.535382 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Planet/CreatePlanet.cs
+  artifactKey: Guid(d7c748c572e605d48a5e8c7346164d39) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Planet/CreatePlanet.cs using Guid(d7c748c572e605d48a5e8c7346164d39) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/4517ea5ee239a074fb024c7dda3e54c0.asset.1.index for Assets/Planet/CreatePlanet.cs with Types
+Done importing asset: 'Assets/Planet/CreatePlanet.cs' (target hash: '6dc57f4e78966262c15a587c61a29e5a') in 0.128661 seconds
+  Import took 0.138698 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001765 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_39.asset
+  artifactKey: Guid(be593d0cc6724164ba4766f3bdd88857) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_39.asset using Guid(be593d0cc6724164ba4766f3bdd88857) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/226d03dee4b196b42af2f0eb3659be30.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_39.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_39.asset' (target hash: 'd638ffef269fd1a2e828cae5e5c819ab') in 0.151922 seconds
+  Import took 0.200960 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002620 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_24.asset
+  artifactKey: Guid(ac65fd268ee5f654caa80d3de6fec5e4) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_24.asset using Guid(ac65fd268ee5f654caa80d3de6fec5e4) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/ff5b4c823e9b6144a993aaa46f7ae22f.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_24.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_24.asset' (target hash: 'a2b8ee699604d20a7ff5ca4a26132be0') in 0.033940 seconds
+  Import took 0.053510 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000732 seconds.
+  path: Assets/Materials/ForceMaterial.mat
+  artifactKey: Guid(46d824ca7649c644991609e7c2aed0bf) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Materials/ForceMaterial.mat using Guid(46d824ca7649c644991609e7c2aed0bf) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/fdf2e05898ce6e143a07da9c4aa720f6.asset.1.index for Assets/Materials/ForceMaterial.mat with Types
+Done importing asset: 'Assets/Materials/ForceMaterial.mat' (target hash: '7d13f891346ac43a62a1868f28be1bc8') in 0.038054 seconds
+  Import took 0.054558 seconds.
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000530 seconds.
+  path: Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_26.asset
+  artifactKey: Guid(93688ab3127926843a3c3c16e7bf974b) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_26.asset using Guid(93688ab3127926843a3c3c16e7bf974b) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/864397177a819eb42a10dd829114a40f.asset.1.index for Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_26.asset with Types
+Done importing asset: 'Assets/HexSpriteTiles_Setup/Palettes/HexTile_Sheet_1A_26.asset' (target hash: '32520d3a874a14fc73e4acb9335cde6a') in 0.032149 seconds
+  Import took 0.051292 seconds.
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.009846 seconds.
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 79.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  1.609 seconds
+Registering precompiled user dll's ...
+Registered in 0.554149 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  1.341 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.2 MB.
+System memory in use after: 54.2 MB.
+
+Unloading 100 unused Assets to reduce memory usage. Loaded Objects now: 2820.
+Total: 4.721534 ms (FindLiveObjects: 0.575823 ms CreateObjectMapping: 0.187592 ms MarkObjects: 2.250045 ms  DeleteObjects: 1.706663 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.993362 seconds.
+  path: Assets/Prefabs/WorldMesh.prefab
+  artifactKey: Guid(29dfeee78958c26409615afbe6db2c4a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Prefabs/WorldMesh.prefab using Guid(29dfeee78958c26409615afbe6db2c4a) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/98661bf1e7b3d0144b5fe99a7a64f912.asset.1.index for Assets/Prefabs/WorldMesh.prefab with Types
+Done importing asset: 'Assets/Prefabs/WorldMesh.prefab' (target hash: '047e4b62bad577312d56a470e9ae53d1') in 0.801906 seconds
+  Import took 0.808255 seconds.
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.004296 seconds.
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 137.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  2.268 seconds
+Registering precompiled user dll's ...
+Registered in 0.201727 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  1.297 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.2 MB.
+System memory in use after: 54.2 MB.
+
+Unloading 100 unused Assets to reduce memory usage. Loaded Objects now: 2826.
+Total: 6.718400 ms (FindLiveObjects: 0.584285 ms CreateObjectMapping: 0.178777 ms MarkObjects: 2.597725 ms  DeleteObjects: 3.356203 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.007121 seconds.
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 83.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  1.865 seconds
+Registering precompiled user dll's ...
+Registered in 0.246138 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for Android target not found
+Native extension for WebGL target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Can't find custom attr constructor image: C:\Users\Gregg Willcox\Desktop\games\GrowTogetherHex\Library\PackageCache\com.unity.ads@3.4.5\Editor\UnityEditor.Advertisements.dll mtoken: 0x0a00000f due to:  assembly:C:\Program Files\Unity\Hub\Editor\2019.4.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll type:UnityAPICompatibilityVersionAttribute member:void {0}(string,string[]) signature:.ctor
+Mono: successfully reloaded assembly
+- Completed reload, in  1.352 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.2 MB.
+System memory in use after: 54.2 MB.
+
+Unloading 100 unused Assets to reduce memory usage. Loaded Objects now: 2832.
+Total: 3.695772 ms (FindLiveObjects: 0.616726 ms CreateObjectMapping: 0.256705 ms MarkObjects: 1.229221 ms  DeleteObjects: 1.592416 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 98.845432 seconds.
+  path: Assets/Scenes/Forest.unity
+  artifactKey: Guid(87ce67859aa23cc46a56091d12c1c812) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+Start importing Assets/Scenes/Forest.unity using Guid(87ce67859aa23cc46a56091d12c1c812) Importer(2089858483,3291a93977bff14cd8133371a99a42d2)
+
+Generated asset (ASIEI01) VirtualArtifacts/NamedExtra/d50866a8bbd34e44888380721bc89385.asset.1.index for Assets/Scenes/Forest.unity with Types
+Done importing asset: 'Assets/Scenes/Forest.unity' (target hash: 'b9db17a5403c645edd2a3bbbcd6d8be6') in 0.069360 seconds
+  Import took 0.074910 seconds.
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

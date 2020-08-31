@@ -117,8 +117,8 @@ public class CreatePlanet : MonoBehaviour
                 calcNoise(interpPoints[i].x + noiseOffsetX, interpPoints[i].y + noiseOffsetY);
             
             Vector3 newSphericalPosition = sphericalComponents + new Vector3(radiusChange, 0, 0);
-
-            Debug.Log($"CHANGED RADIUS BY: {radiusChange}, {newSphericalPosition}");
+/*
+            Debug.Log($"CHANGED RADIUS BY: {radiusChange}, {newSphericalPosition}");*/
             interpPoints[i] = PolarToWorld(newSphericalPosition);
         }
     }
@@ -171,6 +171,21 @@ public class CreatePlanet : MonoBehaviour
         mesh.RecalculateNormals();
     }
 
+    int AddVertex(Vector3 newVertex)
+    {
+        int index;
+        if (!interpPoints.Contains(newVertex))
+        {
+            interpPoints.Add(newVertex);
+            index = interpPoints.Count - 1;
+        }
+        else
+        {
+            index = interpPoints.FindIndex(x => x == newVertex);
+        }
+        return index;
+    }
+
     void InterpolateTriangle(Vector3 X1, Vector3 X2, Vector3 X3)
     {
         for (int k = 0; k <= numPoints; k++)
@@ -185,15 +200,10 @@ public class CreatePlanet : MonoBehaviour
                 Vector3 newVertex = X1 * (1 - frac1 - frac2) + X2 * frac1 + X3 * frac2;
 
                 // TODO: add a function that defines the desired triangles, and another that maps these to the existing vertexes. 
-                if (!interpPoints.Contains(newVertex)) 
-                {
-                    interpPoints.Add(newVertex);
-                    index = interpPoints.Count - 1;
-                }
-                else
-                {
-                    index = interpPoints.FindIndex(x => x == newVertex);
-                }
+                /*AddVertex(newVertex);*/
+
+                interpPoints.Add(newVertex);
+                index = interpPoints.Count - 1;
 
                 // Set upwards-facing triangles
                 if (k != numPoints && l!=numPoints-k)
