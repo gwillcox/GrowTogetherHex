@@ -102,3 +102,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.vs/GrowTogetherHex/v16/.suo
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/Unity.Rider.Editor.csprojAssemblyReference.cache
+.vs/GrowTogetherHex/v16/.suo
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/Unity.Rider.Editor.csprojAssemblyReference.cache
