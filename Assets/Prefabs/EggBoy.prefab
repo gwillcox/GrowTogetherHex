@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692035406775998}
+  - component: {fileID: 6947230055165815229}
   m_Layer: 0
   m_Name: EggBoy
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6947230055165815229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034705299062720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49af93ef5dfa174687a01a5379020b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphericalGravity: 1
 --- !u!1 &1675967568310198
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +158,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &1010525226001932316
 GameObject:
   m_ObjectHideFlags: 0

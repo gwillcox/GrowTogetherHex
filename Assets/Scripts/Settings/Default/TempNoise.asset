@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbdc669bdcb27149a946eb51b7d987d, type: 3}
+  m_Name: TempNoise
+  m_EditorClassIdentifier: 
+  foldout: 0
+  size: 1
+  frequency: 1.048
+  offset: {x: 8.11, y: 7.29, z: 0}
+  octaves: 14
+  persistence: 0.239
+  lacunarity: 0.447
+  minValue: -1

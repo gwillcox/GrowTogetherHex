@@ -5,24 +5,34 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+    public bool flatWorld;
+    public GameObject world;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float wobble = (float)Math.Sin(Time.time * 5)/3000;
+        
+        float wobble = (float)Math.Abs(Math.Sin(Time.time * 5))/500;
         float forwardMovement = Input.GetAxis("Vertical");
         float rotationAmount = Input.GetAxis("Horizontal");
-        transform.position = transform.position - transform.rotation * new Vector3(forwardMovement / 100, 0, 0) + new Vector3(0, wobble, 0);
-/*
-        // Apply gravity
-        transform.position = transform.position - new Vector3(0, 0.01f, 0);*/
 
-        transform.Rotate(new Vector3(0, 1, 0), rotationAmount);
+        if (flatWorld)
+        {
+            transform.position = transform.position - transform.rotation * new Vector3(forwardMovement / 100, 0, 0) + new Vector3(0, wobble, 0);
+            transform.Rotate(new Vector3(0f, 1f, 0f), rotationAmount);
+        }
+        else
+        {
+            world.transform.InverseTransformVector(new Vector3(1, 0, 0));
+            world.transform.Rotate(world.transform.InverseTransformVector(new Vector3(0, 0, -1)), forwardMovement / 25);
+            world.transform.Rotate(world.transform.InverseTransformVector(new Vector3(0, -1, 0)), rotationAmount);
+            transform.position = transform.position + new Vector3(0, wobble, 0);
+        }
 
     }
 }
