@@ -15,7 +15,7 @@ MonoBehaviour:
   foldout: 1
   size: 1
   frequency: 1.048
-  offset: {x: 8.11, y: 7.29, z: 0}
+  offset: {x: 24, y: 7.29, z: 0}
   octaves: 14
   persistence: 0.239
   lacunarity: 0.447

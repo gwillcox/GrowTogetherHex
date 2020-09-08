@@ -30,6 +30,16 @@ public class CreatePlanetEditor : Editor
         {
             planet.SaveAsAsset();
         }
+        if (GUILayout.Button("Make Biomes"))
+        {
+            planet.SetPlanetBiomes();
+            planet.SetPlanetConditions();
+        }
+        if (GUILayout.Button("Create Plant"))
+        {
+            planet.CreatePlant();
+        }
+
     }
 
     void DrawSettingsEditor(Object settings, System.Action onSettingsUpdated, ref bool foldout)

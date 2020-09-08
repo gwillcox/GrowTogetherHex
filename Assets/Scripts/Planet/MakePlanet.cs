@@ -4,6 +4,7 @@ using UnityEditor.Rendering.Universal.ShaderGUI;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 [ExecuteInEditMode, Serializable]
 public class MakePlanet : MonoBehaviour
@@ -49,6 +50,9 @@ public class MakePlanet : MonoBehaviour
     public Vector3 temp_offset;
 
     public Vector3 temp_contributions;
+
+    public Vector2 newPlantPolarLocation;
+    public GameObject plantObject;
 
     private void Update()
     {
@@ -119,11 +123,15 @@ public class MakePlanet : MonoBehaviour
             ApplyNoise();
 
             CalcVertsTris();
+
+            SetPlanetBiomes();
         }
 
         if (colorIt && vertices.Length > 0) {
             UpdateWeather();
-            UpdateShading(); 
+            UpdateShading();
+
+            SetPlanetConditions();
         }
 
         SetMeshUpdate();
@@ -142,10 +150,12 @@ public class MakePlanet : MonoBehaviour
         for (int i = 0; i < vertices.Length; i++)
         {
             var latitude = SphericalGeometry.WorldToPolar(vertices[i])[2];
-            temperature[i] = 385 +
-                -temp_contributions[0] * (float)Math.Abs(Math.Cos(latitude)) -
-                temp_contributions[1] * (Mathf.Max(vertices[i].magnitude, planetRadius)) +
-                temp_contributions[2] * tempNoiseSettings.calcNoise(vertices[i] / planetRadius);
+            bool isOcean = (vertices[i].magnitude > planetRadius);
+            temperature[i] = 385 + 
+                -temp_contributions[0] * (float)Math.Abs(Math.Cos(latitude)) +
+                - temp_contributions[1] * (Mathf.Max(vertices[i].magnitude, planetRadius)) +
+                -temp_contributions[2] * tempNoiseSettings.calcNoise(vertices[i] / planetRadius) +
+                - (isOcean ? 0f : 1f) * 1000f;
         }
         planet.planetConditions.Temperature = temperature;
 
@@ -219,6 +229,21 @@ public class MakePlanet : MonoBehaviour
         }
     }
 
+    public void SetPlanetBiomes()
+    {
+        planet.CreateBiomes(vertices, triangles);
+        Debug.Log($"Made biomes: {planet.biomes.Length}, Neighbors: {planet.biomes[0].neighbors.Count}");
+        Debug.Log($"Check alt: {vertices[201]}, Neighbors: {planet.biomes[201]._worldcoordinates}");
+
+    }
+
+
+    public void SetPlanetConditions()
+    {
+        planet.SetBiomeConditions();
+        Debug.Log($"Set Conditions: {planet.biomes[0].Conditions}");
+    }
+
     private void SetMeshUpdate()
     {
         mesh.Clear();
@@ -233,5 +258,50 @@ public class MakePlanet : MonoBehaviour
     {
         Mesh tempMesh = (Mesh)UnityEngine.Object.Instantiate(mesh);
         AssetDatabase.CreateAsset(tempMesh, "Assets/Scripts/Planet/" + planetName + ".asset");
+    }
+
+    public void CreatePlant()
+    {
+        // find the nearest vertex, and the second two closest neighbors.
+        int closestIndex = -1;
+        float closestDist = Mathf.Infinity;
+
+        for (int i=0; i<planet.biomes.Length; i++)
+        {
+            Vector2 currentPolar = new Vector2(planet.biomes[i]._polarcoordinates[1], planet.biomes[i]._polarcoordinates[2]);
+            float distance = Vector2.Distance(currentPolar, newPlantPolarLocation);
+
+            if (distance<closestDist)
+            {
+                closestIndex = i;
+                closestDist = distance;
+            }
+        }
+
+        Debug.Log($"CLOSEST INDEX: {closestIndex}, {closestDist}, {newPlantPolarLocation}, {planet.biomes[closestIndex]._polarcoordinates[1]} {planet.biomes[closestIndex]._polarcoordinates[2]}");
+
+        Biome closestBiome = planet.biomes[closestIndex];
+
+        Vector3 plantPos = closestBiome._worldcoordinates;
+        Debug.Log($"Polar: {closestBiome._polarcoordinates}, {closestBiome._worldcoordinates}");
+
+        for (int i=0; i<closestBiome.neighbors.Count; i++)
+        {
+            Debug.Log($"NEIGHBOR: {i} {closestBiome.neighbors[i]._polarcoordinates}, {closestBiome.neighbors[i]._worldcoordinates}");
+        }
+
+        Quaternion plantQuaternion = Quaternion.LookRotation(plantPos);
+
+        GameObject.Instantiate(plantObject, plantPos, plantQuaternion, planetObject.transform);
+
+/*
+        // find the closest two of this neighbor's vertexes
+        int[] closest = new int[2];
+        float[] proximity = new float[closestBiome.neighbors.Count];
+        for (int i=0; i<closest.Length; i++)
+        {
+            proximity[i] = 
+        }*/
+
     }
 }

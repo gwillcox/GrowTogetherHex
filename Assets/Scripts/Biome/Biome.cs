@@ -1,22 +1,43 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-
+using UnityEngine;
 using WeightedBiomes = System.Collections.Generic.Dictionary<Biome, float>;
 
+/*[Serializable]*/
 public class Biome
 {
+    public Vector3 _worldcoordinates;
+    public Vector3 _polarcoordinates;
+    public List<Biome> neighbors = new List<Biome>(); 
+
     public BiomeConditions Conditions { get; private set; }
     private List<Plant> _plants;
 
-    public Biome()
+    public Biome(Vector3 worldCoordinates)
     {
+        _worldcoordinates = worldCoordinates;
+        _polarcoordinates = SphericalGeometry.WorldToPolar(_worldcoordinates);
         Conditions = new BiomeConditions();
+    }
+
+    public void AddNeighbor(Biome neighborBiome)
+    {
+        if (!neighbors.Contains(neighborBiome))
+        {
+            neighbors.Add(neighborBiome);
+        }
     }
 
     public void Tick()
     {
         var neighbors = GetWeightedNeighbors();
         ProcessConditions(neighbors);
+    }
+
+    public void SetConditions(BiomeConditions biomeConditions)
+    {
+        Conditions = biomeConditions;
     }
 
     private void ProcessConditions(WeightedBiomes neighborConditions)

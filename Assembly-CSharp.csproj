@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\CreateMap.cs" />
      <Compile Include="Assets\Scripts\CreateMapEditor.cs" />
      <Compile Include="Assets\Scripts\Editors\MapEditor.cs" />
+     <Compile Include="Assets\Scripts\Editors\PlacePlantEditor.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\MapData.cs" />
      <Compile Include="Assets\Scripts\Old\HexCell.cs" />
@@ -68,6 +69,8 @@
      <Compile Include="Assets\Scripts\Old\HexElement.cs" />
      <Compile Include="Assets\Scripts\Old\HexGrid.cs" />
      <Compile Include="Assets\Scripts\Old\HexMetrics.cs" />
+     <Compile Include="Assets\Scripts\PlacePlant.cs" />
+     <Compile Include="Assets\Scripts\Planet\Biome.cs" />
      <Compile Include="Assets\Scripts\Planet\CreateSphere.cs" />
      <Compile Include="Assets\Scripts\Planet\Editors\PlanetMenuEditor.cs" />
      <Compile Include="Assets\Scripts\Planet\MakePlanet.cs" />
