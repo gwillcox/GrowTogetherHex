@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
-using UnityEditor.Rendering.Universal.ShaderGUI;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
+using System.Net.Mime;
 
 [ExecuteInEditMode, Serializable]
 public class MakePlanet : MonoBehaviour
@@ -232,9 +231,7 @@ public class MakePlanet : MonoBehaviour
     public void SetPlanetBiomes()
     {
         planet.CreateBiomes(vertices, triangles);
-        Debug.Log($"Made biomes: {planet.biomes.Length}, Neighbors: {planet.biomes[0].neighbors.Count}");
-        Debug.Log($"Check alt: {vertices[201]}, Neighbors: {planet.biomes[201]._worldcoordinates}");
-
+        Debug.Log($"Made biomes: {planet.biomes.Count}");
     }
 
 
@@ -260,48 +257,110 @@ public class MakePlanet : MonoBehaviour
         AssetDatabase.CreateAsset(tempMesh, "Assets/Scripts/Planet/" + planetName + ".asset");
     }
 
-    public void CreatePlant()
+    public void CreatePlantAtPoint()
+    {
+        CreatePlant(newPlantPolarLocation);
+    }
+
+    public void CreatePlant(Vector2 polarLocation)
+    {
+        int closestIndex = FindClosestBiome(planet.biomes, polarLocation);
+
+        Biome closestBiome = planet.biomes[closestIndex];
+
+        // Instead of instantiating at the vertex, instantiate at the polar position plus altitude. Then, interpolate altitude. 
+        List<Biome> neighbors = new List<Biome>();
+        for (int i = 0; i < closestBiome.neighbors.Count; i++) { neighbors.Add(closestBiome.neighbors[i]); }
+
+        int secondClosestIndex = FindClosestBiome(neighbors, polarLocation);
+        Biome secondClosestBiome = closestBiome.neighbors[secondClosestIndex];
+        neighbors.Remove(secondClosestBiome);
+
+        int thirdClosestIndex = FindClosestBiome(neighbors, polarLocation);
+        Biome thirdClosestBiome = closestBiome.neighbors[thirdClosestIndex];
+
+        Vector3 plantPosWorld = InterpolatePosition(polarLocation, closestBiome, secondClosestBiome, thirdClosestBiome);
+
+        Quaternion plantQuaternion = Quaternion.LookRotation(plantPosWorld);
+
+        GameObject plant = GameObject.Instantiate(plantObject, planetObject.transform.localToWorldMatrix.MultiplyPoint(plantPosWorld), plantQuaternion, planetObject.transform);
+        closestBiome.AddPlant(plant);
+
+    }
+
+    private Vector3 InterpolatePosition(Vector3 polarLocation, Biome biome1, Biome biome2, Biome biome3)
+    {
+        float[] distanceContribution = new float[3];
+        Biome[] biomes = { biome1, biome2, biome3 };
+
+        Vector3 plantUnitProjection = SphericalGeometry.PolarToWorld(new Vector3(1f, polarLocation[0], polarLocation[1]));
+
+        for (int i = 0; i < biomes.Length; i++)
+        {
+            Vector3 currentPolar = new Vector3(1.0f, biomes[i]._polarcoordinates[1], biomes[i]._polarcoordinates[2]);
+            Vector3 currentUnitProjection = SphericalGeometry.PolarToWorld(currentPolar);
+            distanceContribution[i] = 1f/(Vector3.Distance(currentUnitProjection, plantUnitProjection)+0.00000001f);
+        }
+
+        float[] weights = new float[3];
+        Vector3 locationWorld = new Vector3();
+        for (int i = 0; i < biomes.Length; i++)
+        {
+            weights[i] = distanceContribution[i] / distanceContribution.Sum();
+            locationWorld += biomes[i]._worldcoordinates * weights[i];
+        }
+
+        return locationWorld;
+    }
+
+    private int FindClosestBiome(List<Biome> biomes, Vector2 polarLocation)
     {
         // find the nearest vertex, and the second two closest neighbors.
         int closestIndex = -1;
         float closestDist = Mathf.Infinity;
 
-        for (int i=0; i<planet.biomes.Length; i++)
-        {
-            Vector2 currentPolar = new Vector2(planet.biomes[i]._polarcoordinates[1], planet.biomes[i]._polarcoordinates[2]);
-            float distance = Vector2.Distance(currentPolar, newPlantPolarLocation);
+        Vector3 plantUnitProjection = SphericalGeometry.PolarToWorld(new Vector3(1f, polarLocation[0], polarLocation[1]));
 
-            if (distance<closestDist)
+        for (int i = 0; i < biomes.Count; i++)
+        {
+            Vector3 currentPolar = new Vector3(1.0f, biomes[i]._polarcoordinates[1], biomes[i]._polarcoordinates[2]);
+
+            Vector3 currentUnitProjection = SphericalGeometry.PolarToWorld(currentPolar);
+
+            float distance = Vector3.Distance(currentUnitProjection, plantUnitProjection);
+
+            if (distance < closestDist)
             {
                 closestIndex = i;
                 closestDist = distance;
             }
         }
 
-        Debug.Log($"CLOSEST INDEX: {closestIndex}, {closestDist}, {newPlantPolarLocation}, {planet.biomes[closestIndex]._polarcoordinates[1]} {planet.biomes[closestIndex]._polarcoordinates[2]}");
-
-        Biome closestBiome = planet.biomes[closestIndex];
-
-        Vector3 plantPos = closestBiome._worldcoordinates;
-        Debug.Log($"Polar: {closestBiome._polarcoordinates}, {closestBiome._worldcoordinates}");
-
-        for (int i=0; i<closestBiome.neighbors.Count; i++)
+        if (closestIndex == -1)
         {
-            Debug.Log($"NEIGHBOR: {i} {closestBiome.neighbors[i]._polarcoordinates}, {closestBiome.neighbors[i]._worldcoordinates}");
+            Debug.LogError("NO BIOME SELECTED");
         }
 
-        Quaternion plantQuaternion = Quaternion.LookRotation(plantPos);
+        return closestIndex;
+    }
 
-        GameObject.Instantiate(plantObject, plantPos, plantQuaternion, planetObject.transform);
-
-/*
-        // find the closest two of this neighbor's vertexes
-        int[] closest = new int[2];
-        float[] proximity = new float[closestBiome.neighbors.Count];
-        for (int i=0; i<closest.Length; i++)
+    private void OnDrawGizmos()
+    {
+        for (int i=0; i<planet.biomes.Count; i++)
         {
-            proximity[i] = 
-        }*/
+            if (planet.biomes[i]._plantGameObjects.Count > 0)
+            {
+                Gizmos.DrawWireSphere(planet.biomes[i]._worldcoordinates, 1f);
+            }
+        }
+    }
 
+    public void CreateRandomPlants()
+    {
+        for (int i=0; i<100; i++)
+        {
+            Vector2 randomPolar = new Vector2(UnityEngine.Random.Range(-3.14f, 3.14f), UnityEngine.Random.Range(-20f, 3.14f));
+            CreatePlant(randomPolar);
+        }
     }
 }

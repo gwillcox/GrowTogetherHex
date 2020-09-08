@@ -37,7 +37,11 @@ public class CreatePlanetEditor : Editor
         }
         if (GUILayout.Button("Create Plant"))
         {
-            planet.CreatePlant();
+            planet.CreatePlantAtPoint();
+        }
+        if (GUILayout.Button("Create Random Plants"))
+        {
+            planet.CreateRandomPlants();
         }
 
     }

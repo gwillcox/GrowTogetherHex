@@ -13,6 +13,7 @@ public class Biome
 
     public BiomeConditions Conditions { get; private set; }
     private List<Plant> _plants;
+    public List<GameObject> _plantGameObjects = new List<GameObject>();
 
     public Biome(Vector3 worldCoordinates)
     {
@@ -27,6 +28,11 @@ public class Biome
         {
             neighbors.Add(neighborBiome);
         }
+    }
+
+    public void AddPlant(GameObject plant)
+    {
+        _plantGameObjects.Add(plant);
     }
 
     public void Tick()
