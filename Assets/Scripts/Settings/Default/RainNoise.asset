@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: RainNoise
   m_EditorClassIdentifier: 
   foldout: 1
-  size: 1
+  size: 200
   frequency: 1.048
   offset: {x: 24, y: 7.29, z: 0}
   octaves: 14
   persistence: 0.239
   lacunarity: 0.447
-  minValue: -1
+  minValue: 0.26

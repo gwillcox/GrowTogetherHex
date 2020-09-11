@@ -9,17 +9,18 @@ public class Biome
 {
     public Vector3 _worldcoordinates;
     public Vector3 _polarcoordinates;
-    public List<Biome> neighbors = new List<Biome>(); 
+    public List<Biome> neighbors = new List<Biome>();
+    private Planet _planet;
 
-    public BiomeConditions Conditions { get; private set; }
-    private List<Plant> _plants;
-    public List<GameObject> _plantGameObjects = new List<GameObject>();
-
-    public Biome(Vector3 worldCoordinates)
+    public BiomeConditions _conditions { get; private set; }
+    public List<Plant> _plants = new List<Plant>();
+    
+    public Biome(Planet planet, Vector3 worldCoordinates)
     {
+        _planet = planet;
         _worldcoordinates = worldCoordinates;
         _polarcoordinates = SphericalGeometry.WorldToPolar(_worldcoordinates);
-        Conditions = new BiomeConditions();
+        _conditions = new BiomeConditions();
     }
 
     public void AddNeighbor(Biome neighborBiome)
@@ -30,39 +31,60 @@ public class Biome
         }
     }
 
-    public void AddPlant(GameObject plant)
+    public void AddPlant(PlantSettings plantSettings, Vector3 postion)
     {
-        _plantGameObjects.Add(plant);
+        Plant newPlant = new Plant(_planet, this, postion, plantSettings);
+        _plants.Add(newPlant);
+    }
+
+    public void KillPlant(Plant plant)
+    {
+        _plants.Remove(plant); 
+    }
+
+    public void KillAllPlants()
+    {
+        Plant[] _plantCopy = new Plant[_plants.Count];
+        _plants.CopyTo(_plantCopy);
+
+        foreach (var plant in _plantCopy)
+        {
+            plant.KillPlant();
+        }
     }
 
     public void Tick()
     {
-        var neighbors = GetWeightedNeighbors();
-        ProcessConditions(neighbors);
+        Plant[] _plantsCopy = new Plant[_plants.Count];
+        _plants.CopyTo(_plantsCopy);
+        foreach (var plant in _plantsCopy)
+        {
+            plant.ProcessBiomeConditions(_conditions);
+        }
     }
 
     public void SetConditions(BiomeConditions biomeConditions)
     {
-        Conditions = biomeConditions;
+        _conditions = biomeConditions;
     }
 
     private void ProcessConditions(WeightedBiomes neighborConditions)
     {
         // First calculate the biome's internal conditions based on its plants
-        var currentConditions = Conditions;
+        var currentConditions = _conditions;
         var postPlantConditions = new List<BiomeConditions>();
         foreach (var plant in _plants)
         {
             postPlantConditions.Add(plant.ProcessBiomeConditions(currentConditions));
         }
 
-        Conditions = AverageConditions(postPlantConditions);
+        _conditions = AverageConditions(postPlantConditions);
         WeightedBiomes allConditions = neighborConditions
             .Concat(new WeightedBiomes {{this, 1f}})
             .ToDictionary(x => x.Key, x => x.Value);
 
         // Next take into account the neighboring conditions
-        Conditions = ProcessWeightedBiomes(allConditions);
+        _conditions = ProcessWeightedBiomes(allConditions);
     }
 
     private BiomeConditions AverageConditions(List<BiomeConditions> postPlantConditions)
@@ -78,13 +100,5 @@ public class Biome
     private WeightedBiomes GetWeightedNeighbors()
     {
         return new WeightedBiomes();
-    }
-}
-
-internal class Plant
-{
-    public BiomeConditions ProcessBiomeConditions(BiomeConditions currentConditions)
-    {
-        return null;
     }
 }

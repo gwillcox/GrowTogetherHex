@@ -30,7 +30,6 @@ public class MakePlanet : MonoBehaviour
     [Range(1, 100)]
     public float planetRadius;
 
-    public GameObject planetObject;
     private Mesh mesh;
 
     private Vector3[] vertices;
@@ -40,32 +39,23 @@ public class MakePlanet : MonoBehaviour
     private List<Vector3> interpPoints = new List<Vector3>();
     private List<int> interpTris = new List<int>();
 
-    public NoiseSettings terrainNoiseSettings;
-    public bool multiplicativeNoise;
-    public NoiseSettings terrainM_NoiseSettings;
-    public NoiseSettings rainNoiseSettings;
-    public NoiseSettings tempNoiseSettings;
+    public TerrainSettings terrainNoiseSettings;
+    public RainSettings rainNoiseSettings;
+    public TempSettings tempSettings;
 
-    public Vector3 temp_offset;
-
-    public Vector3 temp_contributions;
-
-    public Vector2 newPlantPolarLocation;
-    public GameObject plantObject;
+    public Vector3 newPlantPolarLocation;
+    public PlantSettings plantSettings;
 
     private void Update()
     {
-        if (autoUpdate)
-        {
-            UpdateMesh();
-        }
+        if (autoUpdate) { UpdateMesh(); }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         mesh = new Mesh();
-        planetObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+        planet.planetObject.GetComponent<MeshFilter>().sharedMesh = mesh;
 
         (interpPoints, interpTris) = CreateSphere.CreateIcosahedron(numPoints);
 
@@ -75,7 +65,7 @@ public class MakePlanet : MonoBehaviour
     public void Restart()
     {
         mesh = new Mesh();
-        planetObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+        planet.planetObject.GetComponent<MeshFilter>().sharedMesh = mesh;
         (interpPoints, interpTris) = CreateSphere.CreateIcosahedron(numPoints);
         UpdateMesh();
     }
@@ -87,11 +77,7 @@ public class MakePlanet : MonoBehaviour
         for (int i = 0; i < interpPoints.Count; i++)
         {
             Vector3 sphericalComponents = SphericalGeometry.WorldToPolar(interpPoints[i]);
-            float radiusChange = terrainNoiseSettings.calcNoise(interpPoints[i] / planetRadius);
-            if (multiplicativeNoise)
-            {
-                radiusChange = radiusChange + radiusChange * terrainM_NoiseSettings.calcNoise(interpPoints[i] / planetRadius);
-            }
+            float radiusChange = terrainNoiseSettings.calcTerrainNoise(interpPoints[i] / planetRadius);
 
             Vector3 newSphericalPosition = sphericalComponents + new Vector3(radiusChange*planetRadius+0.01f, 0, 0);
             interpPoints[i] = SphericalGeometry.PolarToWorld(newSphericalPosition);
@@ -138,34 +124,7 @@ public class MakePlanet : MonoBehaviour
 
     void UpdateWeather()
     {
-        float[] altitude = new float[vertices.Length];
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            altitude[i] = vertices[i].magnitude;
-        }
-        planet.planetConditions.Altitude = altitude;
-
-        float[] temperature = new float[vertices.Length];
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            var latitude = SphericalGeometry.WorldToPolar(vertices[i])[2];
-            bool isOcean = (vertices[i].magnitude > planetRadius);
-            temperature[i] = 385 + 
-                -temp_contributions[0] * (float)Math.Abs(Math.Cos(latitude)) +
-                - temp_contributions[1] * (Mathf.Max(vertices[i].magnitude, planetRadius)) +
-                -temp_contributions[2] * tempNoiseSettings.calcNoise(vertices[i] / planetRadius) +
-                - (isOcean ? 0f : 1f) * 1000f;
-        }
-        planet.planetConditions.Temperature = temperature;
-
-        float[] rainfall = new float[vertices.Length];
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            rainfall[i] = (rainNoiseSettings.calcNoise(vertices[i] / planetRadius) + 1) * 50;
-        }
-        planet.planetConditions.Rainfall = rainfall;
-
-        planet.planetConditions.updateBiomes();
+        planet.SetBiomeConditions();
     }
 
     void UpdateShading()
@@ -176,19 +135,48 @@ public class MakePlanet : MonoBehaviour
                 StandardShading();
                 break;
             case ColorBy.Altitude:
-                CalculateShading(altitudeGradient, planet.planetConditions.Altitude);
+                float[] altitudeArray = new float[planet.biomes.Count];
+                for (int i=0; i<planet.biomes.Count; i++)
+                {
+                    altitudeArray[i] = planet.biomes[i]._conditions.Altitude;
+                }
+                CalculateShading(altitudeGradient, altitudeArray);
                 break;
+
             case ColorBy.Terrain:
-                CalculateShading(terrainGradient, planet.planetConditions.Altitude);
+                float[] terrainArray = new float[planet.biomes.Count];
+                for (int i = 0; i < planet.biomes.Count; i++)
+                {
+                    terrainArray[i] = planet.biomes[i]._conditions.Altitude;
+                }
+                CalculateShading(terrainGradient, terrainArray);
                 break;
+
             case ColorBy.Rainfall:
-                CalculateShading(rainfallGradient, planet.planetConditions.Rainfall);
+                float[] rainfallArray = new float[planet.biomes.Count];
+                for (int i = 0; i < planet.biomes.Count; i++)
+                {
+                    rainfallArray[i] = planet.biomes[i]._conditions.Rainfall;
+                }
+                CalculateShading(rainfallGradient, rainfallArray);
                 break;
+
             case ColorBy.Temperature:
-                CalculateShading(temperatureGradient, planet.planetConditions.Temperature);
+                float[] temperatureArray = new float[planet.biomes.Count];
+                for (int i = 0; i < planet.biomes.Count; i++)
+                {
+                    temperatureArray[i] = planet.biomes[i]._conditions.Temperature;
+                }
+                CalculateShading(temperatureGradient, temperatureArray);
                 break;
+
             case ColorBy.Biome:
-                CalculateShading(biomeGradient, planet.planetConditions.BiomeID);
+                float[] biomeArray = new float[planet.biomes.Count];
+                for (int i = 0; i < planet.biomes.Count; i++)
+                {
+                    biomeArray[i] = planet.biomes[i]._conditions.BiomeID;
+                }
+                CalculateShading(biomeGradient, biomeArray);
                 break;
         }
     }
@@ -238,7 +226,7 @@ public class MakePlanet : MonoBehaviour
     public void SetPlanetConditions()
     {
         planet.SetBiomeConditions();
-        Debug.Log($"Set Conditions: {planet.biomes[0].Conditions}");
+        Debug.Log($"Set Conditions: {planet.biomes[0]._conditions}");
     }
 
     private void SetMeshUpdate()
@@ -262,104 +250,16 @@ public class MakePlanet : MonoBehaviour
         CreatePlant(newPlantPolarLocation);
     }
 
-    public void CreatePlant(Vector2 polarLocation)
+    public void CreatePlant(Vector3 polarLocation)
     {
-        int closestIndex = FindClosestBiome(planet.biomes, polarLocation);
-
-        Biome closestBiome = planet.biomes[closestIndex];
-
-        // Instead of instantiating at the vertex, instantiate at the polar position plus altitude. Then, interpolate altitude. 
-        List<Biome> neighbors = new List<Biome>();
-        for (int i = 0; i < closestBiome.neighbors.Count; i++) { neighbors.Add(closestBiome.neighbors[i]); }
-
-        int secondClosestIndex = FindClosestBiome(neighbors, polarLocation);
-        Biome secondClosestBiome = closestBiome.neighbors[secondClosestIndex];
-        neighbors.Remove(secondClosestBiome);
-
-        int thirdClosestIndex = FindClosestBiome(neighbors, polarLocation);
-        Biome thirdClosestBiome = closestBiome.neighbors[thirdClosestIndex];
-
-        Vector3 plantPosWorld = InterpolatePosition(polarLocation, closestBiome, secondClosestBiome, thirdClosestBiome);
-
-        Quaternion plantQuaternion = Quaternion.LookRotation(plantPosWorld);
-
-        GameObject plant = GameObject.Instantiate(plantObject, planetObject.transform.localToWorldMatrix.MultiplyPoint(plantPosWorld), plantQuaternion, planetObject.transform);
-        closestBiome.AddPlant(plant);
-
-    }
-
-    private Vector3 InterpolatePosition(Vector3 polarLocation, Biome biome1, Biome biome2, Biome biome3)
-    {
-        float[] distanceContribution = new float[3];
-        Biome[] biomes = { biome1, biome2, biome3 };
-
-        Vector3 plantUnitProjection = SphericalGeometry.PolarToWorld(new Vector3(1f, polarLocation[0], polarLocation[1]));
-
-        for (int i = 0; i < biomes.Length; i++)
-        {
-            Vector3 currentPolar = new Vector3(1.0f, biomes[i]._polarcoordinates[1], biomes[i]._polarcoordinates[2]);
-            Vector3 currentUnitProjection = SphericalGeometry.PolarToWorld(currentPolar);
-            distanceContribution[i] = 1f/(Vector3.Distance(currentUnitProjection, plantUnitProjection)+0.00000001f);
-        }
-
-        float[] weights = new float[3];
-        Vector3 locationWorld = new Vector3();
-        for (int i = 0; i < biomes.Length; i++)
-        {
-            weights[i] = distanceContribution[i] / distanceContribution.Sum();
-            locationWorld += biomes[i]._worldcoordinates * weights[i];
-        }
-
-        return locationWorld;
-    }
-
-    private int FindClosestBiome(List<Biome> biomes, Vector2 polarLocation)
-    {
-        // find the nearest vertex, and the second two closest neighbors.
-        int closestIndex = -1;
-        float closestDist = Mathf.Infinity;
-
-        Vector3 plantUnitProjection = SphericalGeometry.PolarToWorld(new Vector3(1f, polarLocation[0], polarLocation[1]));
-
-        for (int i = 0; i < biomes.Count; i++)
-        {
-            Vector3 currentPolar = new Vector3(1.0f, biomes[i]._polarcoordinates[1], biomes[i]._polarcoordinates[2]);
-
-            Vector3 currentUnitProjection = SphericalGeometry.PolarToWorld(currentPolar);
-
-            float distance = Vector3.Distance(currentUnitProjection, plantUnitProjection);
-
-            if (distance < closestDist)
-            {
-                closestIndex = i;
-                closestDist = distance;
-            }
-        }
-
-        if (closestIndex == -1)
-        {
-            Debug.LogError("NO BIOME SELECTED");
-        }
-
-        return closestIndex;
-    }
-
-    private void OnDrawGizmos()
-    {
-        for (int i=0; i<planet.biomes.Count; i++)
-        {
-            if (planet.biomes[i]._plantGameObjects.Count > 0)
-            {
-                Gizmos.DrawWireSphere(planet.biomes[i]._worldcoordinates, 1f);
-            }
-        }
+        PlacePlant.placeNew(polarLocation, planet, plantSettings);
     }
 
     public void CreateRandomPlants()
     {
         for (int i=0; i<100; i++)
         {
-            Vector2 randomPolar = new Vector2(UnityEngine.Random.Range(-3.14f, 3.14f), UnityEngine.Random.Range(-20f, 3.14f));
+            Vector3 randomPolar = new Vector3(1f, UnityEngine.Random.Range(-3.14f, 3.14f), UnityEngine.Random.Range(-20f, 3.14f));
             CreatePlant(randomPolar);
         }
     }

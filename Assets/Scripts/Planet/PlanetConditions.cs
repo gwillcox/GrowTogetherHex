@@ -7,51 +7,62 @@ using UnityEngine;
 [Serializable]
 public class PlanetConditions
 {
-    public float[] Temperature { get; set; }
-    public float[] Altitude { get; set; }
-    public float[] Rainfall { get; set; }
-    public string[] Biome { get; private set; }
-    public float[] BiomeID { get; private set; }
+
+    public TerrainSettings terrainNoiseSettings;
+    public RainSettings rainNoiseSettings;
+    public TempSettings tempSettings;
+
+    public float planetRadius = 75f;
 
     // Define the biomes based on temp and rainfall data; 
     // temp in Average deg. C, 
     // rainfall in Annaul Precipitation (cm)
-    public void updateBiomes()
+    public int CalcBiome(float temperature, float rainfall)
     {
-        BiomeID = new float[Temperature.Length];
-        for (int i=0; i<Temperature.Length; i++)
-        {
-            if (Temperature[i] < -5) { BiomeID[i] = 0; }
-            else if (Temperature[i] < 5  && Rainfall[i] > 50) { BiomeID[i] = 1; }
-            else if (Rainfall[i] <30) { BiomeID[i] = 2; }
-            else if (Temperature[i] < 20 && Rainfall[i] < 75) { BiomeID[i] = 3; }
-            else if (Temperature[i] < 20 && Rainfall[i] < 200) { BiomeID[i] = 4; }
-            else if (Temperature[i] < 20) { BiomeID[i] = 5; }
-            else if (Rainfall[i] < 100) { BiomeID[i] = 6; }
-            else if (Rainfall[i] < 250) { BiomeID[i] = 7; }
-            else { BiomeID[i] = 8; }
-        }
+        int BiomeID;
 
-        lookupBiomes();
+        if (temperature < -5) { BiomeID = 0; }
+        else if (temperature < 5 && rainfall > 50) { BiomeID = 1; }
+        else if (rainfall < 30) { BiomeID = 2; }
+        else if (temperature < 20 && rainfall < 75) { BiomeID = 3; }
+        else if (temperature < 20 && rainfall < 200) { BiomeID = 4; }
+        else if (temperature < 20) { BiomeID = 5; }
+        else if (rainfall < 100) { BiomeID = 6; }
+        else if (rainfall < 250) { BiomeID = 7; }
+        else { BiomeID = 8; }
+
+        return BiomeID;
     }
 
-    void lookupBiomes()
+    string LookupBiome(int biomeID)
     {
-        Biome = new string[BiomeID.Length];
-        for (int i = 0; i < BiomeID.Length; i++)
-        {
-            if (BiomeID[i] == 0) { Biome[i] = "Tundra"; }
-            else if (BiomeID[i] == 1) { Biome[i] = "Taiga"; }
-            else if (BiomeID[i] == 2) { Biome[i] = "Subtropical Desert"; }
-            else if (BiomeID[i] == 3) { Biome[i] = "Temperate Desert"; }
-            else if (BiomeID[i] == 4) { Biome[i] = "Temperate Deciduous Forest"; }
-            else if (BiomeID[i] == 5) { Biome[i] = "Temperate Rain Forest"; }
-            else if (BiomeID[i] == 6) { Biome[i] = "Savanna"; }
-            else if (BiomeID[i] == 7) { Biome[i] = "Tropical Seasonal Forest"; }
-            else if (BiomeID[i] == 8) { Biome[i] = "Tropical Rain Forest"; }
-            else { Debug.LogError("NO BIOME FOUND"); }
+        string biome; 
 
-        }
+        if (biomeID == 0) { biome = "Tundra"; }
+        else if (biomeID == 1) { biome = "Taiga"; }
+        else if (biomeID == 2) { biome = "Subtropical Desert"; }
+        else if (biomeID == 3) { biome = "Temperate Desert"; }
+        else if (biomeID == 4) { biome = "Temperate Deciduous Forest"; }
+        else if (biomeID == 5) { biome = "Temperate Rain Forest"; }
+        else if (biomeID == 6) { biome = "Savanna"; }
+        else if (biomeID == 7) { biome = "Tropical Seasonal Forest"; }
+        else if (biomeID == 8) { biome = "Tropical Rain Forest"; }
+        else { biome = "NONE"; Debug.LogError("NO BIOME FOUND"); }
+
+        return biome;
+    }
+
+    public BiomeConditions CalcBiomeConditions(Biome biome)
+    {
+        BiomeConditions biomeConditions = new BiomeConditions();
+
+        biomeConditions.Altitude = biome._polarcoordinates[0];
+        biomeConditions.Rainfall = rainNoiseSettings.calcRain(biome._worldcoordinates, planetRadius);
+        biomeConditions.Temperature = tempSettings.calcTemp(biome._worldcoordinates, planetRadius);
+        biomeConditions.BiomeID = CalcBiome(biomeConditions.Temperature, biomeConditions.Rainfall);
+        biomeConditions.Biome = LookupBiome(biomeConditions.BiomeID);
+
+        return biomeConditions;
     }
 }
 

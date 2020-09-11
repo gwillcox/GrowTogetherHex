@@ -9,14 +9,12 @@ public class CreatePlanetEditor : Editor
     public override void OnInspectorGUI()
     {
         planet = (MakePlanet)target;
-        base.OnInspectorGUI();/*
+        base.OnInspectorGUI();
 
-        DrawDefaultInspector();*/
-
-        DrawSettingsEditor(planet.terrainNoiseSettings, planet.UpdateMesh, ref planet.terrainNoiseSettings.foldout); ;
-        DrawSettingsEditor(planet.terrainM_NoiseSettings, planet.UpdateMesh, ref planet.terrainM_NoiseSettings.foldout);
-        DrawSettingsEditor(planet.rainNoiseSettings, planet.UpdateMesh, ref planet.rainNoiseSettings.foldout);
-        DrawSettingsEditor(planet.tempNoiseSettings, planet.UpdateMesh, ref planet.tempNoiseSettings.foldout);
+        DrawSettingsEditor(planet.terrainNoiseSettings, ref planet.terrainNoiseSettings.foldout); ;
+        DrawSettingsEditor(planet.terrainNoiseSettings.ridgeNoise, ref planet.terrainNoiseSettings.ridgeNoise.foldout);
+        DrawSettingsEditor(planet.rainNoiseSettings, ref planet.rainNoiseSettings.foldout);
+        DrawSettingsEditor(planet.tempSettings, ref planet.tempSettings.foldout);
 
         if (GUILayout.Button("Redraw"))
         {
@@ -46,26 +44,16 @@ public class CreatePlanetEditor : Editor
 
     }
 
-    void DrawSettingsEditor(Object settings, System.Action onSettingsUpdated, ref bool foldout)
+    void DrawSettingsEditor(Object settings, ref bool foldout)
     {
         if (settings != null)
         {
-            var check = new EditorGUI.ChangeCheckScope();
-
             foldout = EditorGUILayout.InspectorTitlebar(foldout, settings);
 
             if (foldout)
             {
                 Editor editor = CreateEditor(settings);
                 editor.OnInspectorGUI();
-            }
-
-            if (check.changed)
-            {
-                if (onSettingsUpdated != null)
-                {
-                    onSettingsUpdated();
-                }
             }
         }
     }

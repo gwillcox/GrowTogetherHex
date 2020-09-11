@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbdc669bdcb27149a946eb51b7d987d, type: 3}
   m_Name: TerrainMultiplicativeNoise
   m_EditorClassIdentifier: 
-  foldout: 0
-  size: 0.07
-  frequency: 0.124
-  offset: {x: 26.93, y: 9, z: 14.5}
-  octaves: 12
-  persistence: 0.694
-  lacunarity: 0.623
-  minValue: 0.066
+  foldout: 1
+  size: 0.2
+  frequency: 0.35
+  offset: {x: 18.98, y: 14.2, z: 11.4}
+  octaves: 13
+  persistence: 0.607
+  lacunarity: 0.56
+  minValue: 0

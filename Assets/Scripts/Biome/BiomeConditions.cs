@@ -1,8 +1,12 @@
-﻿public class BiomeConditions
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BiomeConditions
 {
-    public float Temperature { get; set; }
-    public float Rainfall { get; set; }
-    public float Altitude { get; set; }
-    public float BiomeID { get; set; }
-    public string Biome { get; set; }
+    public float Temperature;
+    public float Altitude;
+    public float Rainfall;
+    public int BiomeID;
+    public string Biome;
 }

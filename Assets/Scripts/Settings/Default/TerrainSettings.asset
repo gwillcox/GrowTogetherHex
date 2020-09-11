@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052735c48dcf83248b4c539b6beafe3c, type: 3}
+  m_Name: TerrainSettings
+  m_EditorClassIdentifier: 
+  foldout: 1
+  size: 0.2
+  frequency: 0.35
+  offset: {x: 29.79, y: 22.6, z: 8.1}
+  octaves: 13
+  persistence: 0.607
+  lacunarity: 0.56
+  minValue: 0
+  ridgeNoise: {fileID: 11400000, guid: 425db0a8470164d44a30dd96c682ed76, type: 2}

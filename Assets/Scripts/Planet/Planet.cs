@@ -8,6 +8,7 @@ public class Planet
 {
     public PlanetConditions planetConditions;
     public List<Biome> biomes = new List<Biome>();
+    public GameObject planetObject;
 
     public void CreateBiomes(Vector3[] vertices, int[] triangles)
     {
@@ -15,7 +16,7 @@ public class Planet
         
         for (int i = 0; i<vertices.Length; i++)
         {
-            biomes.Add(new Biome(vertices[i]));
+            biomes.Add(new Biome(this, vertices[i])); 
         }
 
         for (int i=0; i<triangles.Length; i+=3)
@@ -31,26 +32,28 @@ public class Planet
             biome3.AddNeighbor(biome1);
             biome3.AddNeighbor(biome2);
         }
+
+        this.SetBiomeConditions();
     }
 
+    // Sets the biome conditions from the Planet Conditions savestate. 
     public void SetBiomeConditions()
     {
         for (int i=0; i<biomes.Count; i++)
         {
-            BiomeConditions biomeConditions = new BiomeConditions();
-            biomeConditions.Altitude = planetConditions.Altitude[i];
-            biomeConditions.Rainfall = planetConditions.Rainfall[i];
-            biomeConditions.Temperature = planetConditions.Temperature[i];
-            biomeConditions.Biome = planetConditions.Biome[i];
-            biomeConditions.BiomeID = planetConditions.BiomeID[i];
+            BiomeConditions biomeConditions = planetConditions.CalcBiomeConditions(biomes[i]);
 
             biomes[i].SetConditions(biomeConditions);
         }
-
     }
 
-    public void ResetBiomes()
+    public void UpdateBiomeTemperatures()
     {
+        for (int i = 0; i < biomes.Count; i++)
+        {
+            float temp = planetConditions.tempSettings.calcTemp(biomes[i]._worldcoordinates, planetConditions.planetRadius);
 
+            biomes[i]._conditions.Temperature = temp;
+        }
     }
 }
