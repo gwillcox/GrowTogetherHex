@@ -112,19 +112,13 @@ public class MakePlanet : MonoBehaviour
             SetPlanetBiomes();
         }
 
-        if (colorIt && vertices.Length > 0) {
-            UpdateWeather();
-            UpdateShading();
-
+        if (colorIt && vertices.Length > 0)
+        {
             SetPlanetConditions();
+            UpdateShading();
         }
 
         SetMeshUpdate();
-    }
-
-    void UpdateWeather()
-    {
-        planet.SetBiomeConditions();
     }
 
     void UpdateShading()
@@ -134,6 +128,7 @@ public class MakePlanet : MonoBehaviour
             case ColorBy.None:
                 StandardShading();
                 break;
+
             case ColorBy.Altitude:
                 float[] altitudeArray = new float[planet.biomes.Count];
                 for (int i=0; i<planet.biomes.Count; i++)

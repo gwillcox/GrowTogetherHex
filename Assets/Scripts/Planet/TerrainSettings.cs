@@ -4,7 +4,7 @@
 public class TerrainSettings : NoiseSettings {
 
     public NoiseSettings ridgeNoise;
-
+    // TODO: change to altitude settings
     public float calcTerrainNoise(Vector3 vertex)
     {
         float multiplicativeNoise = this.calcNoise(vertex);
