@@ -17,8 +17,8 @@ public class TimeController : MonoBehaviour
 
     public void InitWorld()
     {
-        _planetMesh = _planet.planetObject.GetComponent<MeshFilter>().sharedMesh;
-        _planet.CreateBiomes(_planetMesh.vertices, _planetMesh.triangles);
+        _planetMesh = _planet.GetComponent<MeshFilter>().sharedMesh;
+        // _planet.CreateBiomes(_planetMesh.vertices, _planetMesh.triangles);
 
         for (int i = 0; i < 5; i++)
         {
@@ -30,8 +30,8 @@ public class TimeController : MonoBehaviour
 
     public void ResetWorld()
     {
-        Biome[] biomeCopy = new Biome[_planet.biomes.Count];
-        _planet.biomes.CopyTo(biomeCopy);
+        Biome[] biomeCopy = new Biome[_planet._biomes.Count];
+        _planet._biomes.CopyTo(biomeCopy);
         foreach (var biome in biomeCopy)
         {
             biome.KillAllPlants();
@@ -40,7 +40,7 @@ public class TimeController : MonoBehaviour
 
     public void Tick()
     {
-        foreach (var biome in _planet.biomes)
+        foreach (var biome in _planet._biomes)
         {
             _planet.planetConditions.tempSettings.offset += Random.insideUnitSphere / 10f;
             _planet.UpdateBiomeTemperatures();

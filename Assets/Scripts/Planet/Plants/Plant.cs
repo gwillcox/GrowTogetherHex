@@ -19,9 +19,9 @@ public class Plant
 
         _plantObject = GameObject.Instantiate(
             _plantSettings.plantObject,
-            _planet.planetObject.transform.localToWorldMatrix.MultiplyPoint(_position),
+            _planet.transform.localToWorldMatrix.MultiplyPoint(_position),
             Quaternion.LookRotation(_position),
-            _planet.planetObject.transform);
+            _planet.transform);
     }
 
     public BiomeConditions ProcessBiomeConditions(BiomeConditions conditions)

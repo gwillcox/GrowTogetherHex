@@ -8,8 +8,8 @@ public class PlacePlant
     // Todo: maybe refactor so that we deal with world, rather than polar coords?
     public static void placeNew(Vector3 polarLocation, Planet planet, PlantSettings plantSettings)
     {
-        int closestIndex = PlacePlant.FindClosestBiome(planet.biomes, polarLocation);
-        Biome closestBiome = planet.biomes[closestIndex];
+        int closestIndex = PlacePlant.FindClosestBiome(planet._biomes, polarLocation);
+        Biome closestBiome = planet._biomes[closestIndex];
 
         // Instead of instantiating at the vertex, instantiate at the polar position plus altitude. Then, interpolate altitude. 
         List<Biome> closestBiomeList = PlacePlant.FindNearestTwoBiomes(closestBiome, polarLocation);

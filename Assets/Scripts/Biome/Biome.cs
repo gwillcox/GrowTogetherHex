@@ -7,6 +7,7 @@ using WeightedBiomes = System.Collections.Generic.Dictionary<Biome, float>;
 /*[Serializable]*/
 public class Biome
 {
+    public Vector3 Position { get; set; }
     public Vector3 _worldcoordinates;
     public Vector3 _polarcoordinates;
     public List<Biome> neighbors = new List<Biome>();
@@ -19,6 +20,7 @@ public class Biome
     {
         _planet = planet;
         _worldcoordinates = worldCoordinates;
+        Position = worldCoordinates;
         _polarcoordinates = SphericalGeometry.WorldToPolar(_worldcoordinates);
         _conditions = new BiomeConditions();
     }

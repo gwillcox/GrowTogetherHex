@@ -18,7 +18,7 @@ public class CreatePlanetEditor : Editor
 
         if (GUILayout.Button("Redraw"))
         {
-            planet.UpdateMesh();
+            planet.CreatePlanet();
         }
         if (GUILayout.Button("Restart"))
         {
@@ -28,14 +28,14 @@ public class CreatePlanetEditor : Editor
         {
             planet.SaveAsAsset();
         }
-        if (GUILayout.Button("Make Biomes"))
-        {
-            planet.SetPlanetBiomes();
-            planet.SetPlanetConditions();
-        }
+        // if (GUILayout.Button("Make Biomes"))
+        // {
+        //     planet.SetPlanetBiomes();
+        //     planet.SetPlanetConditions();
+        // }
         if (GUILayout.Button("Create Plant"))
         {
-            planet.CreatePlantAtPoint();
+            // planet.CreatePlantAtPoint();
         }
         if (GUILayout.Button("Create Random Plants"))
         {
