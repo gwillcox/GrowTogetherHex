@@ -63,7 +63,6 @@ public class Planet : MonoBehaviour
             Vector3 newSphericalPosition =
                 sphericalComponents + new Vector3(radiusChange * _planetRadius + 0.01f, 0, 0);
             biome.Position = SphericalGeometry.PolarToWorld(newSphericalPosition);
-            _polarWorldPositions.Add(biome.Position);
         }
     }
 
@@ -112,7 +111,7 @@ public class Planet : MonoBehaviour
     {
         _mesh.Clear();
         // print($"Got this stuff: {_biomes.Select(b => b.Position).ToArray().Length}");
-        _mesh.vertices = _polarWorldPositions.ToArray();
+        _mesh.vertices = _biomes.Select(b => b._worldcoordinates).ToArray();
         _mesh.triangles = _interpTris.ToArray();
         // _mesh.colors = colors;
         _mesh.RecalculateTangents();
