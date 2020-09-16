@@ -20,7 +20,6 @@ public class PlacePlant
         {
             closestBiome.AddPlant(plantSettings, plantPosWorld);
         }
-        else { Debug.Log("Not Planted"); }
     }
 
     public static bool IsPlantable(Biome biome, Vector3 worldLocation)
@@ -33,7 +32,7 @@ public class PlacePlant
 
         for (int i = 0; i < biome._plants.Count; i++)
         {
-            Vector3 plant2Pos = biome._plants[i]._plantObject.transform.position;
+            Vector3 plant2Pos = biome._plants[i].transform.position;
             if (Vector3.Distance(worldLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
             {
                 plantable = false;
@@ -46,7 +45,7 @@ public class PlacePlant
             {
                 for (int i = 0; i < biome._plants.Count; i++)
                 {
-                    Vector3 plant2Pos = biome._plants[i]._plantObject.transform.position;
+                    Vector3 plant2Pos = biome._plants[i].transform.position;
                     if (Vector3.Distance(worldLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
                     {
                         plantable = false;
@@ -129,7 +128,7 @@ public class PlacePlant
 
         if (closestIndex == -1)
         {
-            Debug.LogError("NO BIOME SELECTED");
+            Debug.LogError($"NO BIOME SELECTED: {plantUnitProjection}, {closestDist}, {biomes.Count}, {polarLocation}");
         }
 
         return closestIndex;

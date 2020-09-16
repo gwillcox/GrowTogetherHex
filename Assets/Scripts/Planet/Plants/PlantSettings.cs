@@ -19,7 +19,6 @@ public class PlantSettings : ScriptableObject {
 
     public float calcAffinity(float temperature, float rainfall)
     {
-        Debug.Log($"{temperatureAffinity.Evaluate(1f)}, {temperature}, {rainfall}");
         return temperatureAffinity.Evaluate(temperature) * rainfallAffinity.Evaluate(rainfall);
     }
 

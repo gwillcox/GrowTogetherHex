@@ -49,6 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a7f6fe5c5ac1742bb769bb4b7da038, type: 3}
   m_Name: NewBlitRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     material: {fileID: 2100000, guid: e9d9dc53e8437334da311b29f9f94384, type: 2}

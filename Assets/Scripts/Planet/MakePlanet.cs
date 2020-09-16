@@ -5,7 +5,7 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Net.Mime;
 
-[ExecuteInEditMode, Serializable]
+[Serializable, ExecuteInEditMode()]
 public class MakePlanet : MonoBehaviour
 {
     public string planetName;
@@ -22,7 +22,9 @@ public class MakePlanet : MonoBehaviour
     public Gradient rainfallGradient;
     public Gradient biomeGradient;
 
-    public Planet planet = new Planet();
+    public GameObject world;
+    public Planet planetPrefab;
+    private Planet planet;
 
     [Range(1, 250)]
     public int numPoints;
@@ -55,17 +57,21 @@ public class MakePlanet : MonoBehaviour
     void Start()
     {
         mesh = new Mesh();
-        planet.planetObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+        planet = Instantiate(planetPrefab, world.transform);
+        planet.GetComponent<MeshFilter>().sharedMesh = mesh;
+    }
 
-        (interpPoints, interpTris) = CreateSphere.CreateIcosahedron(numPoints);
-
-        UpdateMesh();
+    
+    public void ResetMesh()
+    {
+        GameObject.DestroyImmediate(planet);
+        mesh = new Mesh();      
+        planet = Instantiate(planetPrefab, world.transform);
+        planet.GetComponent<MeshFilter>().sharedMesh = mesh;
     }
 
     public void Restart()
     {
-        mesh = new Mesh();
-        planet.planetObject.GetComponent<MeshFilter>().sharedMesh = mesh;
         (interpPoints, interpTris) = CreateSphere.CreateIcosahedron(numPoints);
         UpdateMesh();
     }

@@ -536,6 +536,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3650788826218848705, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3699657057236657569, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
         type: 3}
       propertyPath: m_RootOrder
@@ -549,12 +554,12 @@ PrefabInstance:
     - target: {fileID: 5072507346079881756, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5085889708251336681, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6190669245039725711, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
         type: 3}
@@ -566,6 +571,16 @@ PrefabInstance:
       propertyPath: world
       value: 
       objectReference: {fileID: 1987411539}
+    - target: {fileID: 6947230055165815229, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947230055165815229, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 2.88
+      objectReference: {fileID: 0}
     - target: {fileID: 7899964322593430159, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
         type: 3}
       propertyPath: m_RootOrder
@@ -674,7 +689,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1987411540}
-  - component: {fileID: 1987411541}
   - component: {fileID: 1987411542}
   m_Layer: 0
   m_Name: World
@@ -700,7 +714,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1987411541
+--- !u!114 &1987411542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -709,183 +723,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987411539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9906bc30f829c954893f87b2669d7700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetName: LoResPlanet
-  autoUpdate: 0
-  colorIt: 1
-  structureIt: 1
-  projectMesh: 1
-  colorBy: 1
-  terrainGradient:
-    serializedVersion: 2
-    key0: {r: 0.18642074, g: 0.08018869, b: 1, a: 1}
-    key1: {r: 0.9339623, g: 0.8698825, b: 0.21586865, a: 1}
-    key2: {r: 0.047455706, g: 1, b: 0.06372477, a: 0}
-    key3: {r: 0.25089258, g: 1, b: 0.263687, a: 0}
-    key4: {r: 0, g: 0.46226418, b: 0.0072606807, a: 0}
-    key5: {r: 0.5943396, g: 0.2909222, b: 0.047659315, a: 0}
-    key6: {r: 1, g: 1, b: 1, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 1349
-    ctime1: 5975
-    ctime2: 8288
-    ctime3: 25636
-    ctime4: 35273
-    ctime5: 48380
-    ctime6: 58018
-    ctime7: 0
-    atime0: 7132
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 7
-    m_NumAlphaKeys: 2
-  altitudeGradient:
-    serializedVersion: 2
-    key0: {r: 0.023629185, g: 0.006407972, b: 0.1509434, a: 1}
-    key1: {r: 0, g: 0.009653568, b: 1, a: 1}
-    key2: {r: 0.03486424, g: 0.9707622, b: 0.8540144, a: 0}
-    key3: {r: 0.54878914, g: 1, b: 0, a: 0}
-    key4: {r: 0.5943396, g: 0.2909222, b: 0.047659315, a: 0}
-    key5: {r: 0.75408316, g: 0.57014745, b: 0.42267817, a: 0}
-    key6: {r: 1, g: 1, b: 1, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 193
-    ctime1: 21203
-    ctime2: 43562
-    ctime3: 62644
-    ctime4: 47609
-    ctime5: 51657
-    ctime6: 58018
-    ctime7: 0
-    atime0: 7132
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 2
-  temperatureGradient:
-    serializedVersion: 2
-    key0: {r: 0.023629185, g: 0.006407972, b: 0.1509434, a: 1}
-    key1: {r: 0.6642647, g: 0.003782494, b: 0.8018868, a: 1}
-    key2: {r: 0, g: 0.009653568, b: 1, a: 0}
-    key3: {r: 0, g: 1, b: 0.0575552, a: 0}
-    key4: {r: 0.90588236, g: 0.85567796, b: 0.031372543, a: 0}
-    key5: {r: 0.9614264, g: 0.3902772, b: 0.012857873, a: 0}
-    key6: {r: 1, g: 0.0670706, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 11180
-    ctime2: 23708
-    ctime3: 36044
-    ctime4: 47995
-    ctime5: 57632
-    ctime6: 65535
-    ctime7: 0
-    atime0: 7132
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 7
-    m_NumAlphaKeys: 2
-  rainfallGradient:
-    serializedVersion: 2
-    key0: {r: 0.023629185, g: 0.006407972, b: 0.1509434, a: 1}
-    key1: {r: 0, g: 0.009653568, b: 1, a: 1}
-    key2: {r: 0.90588236, g: 0.85567796, b: 0.031372543, a: 0}
-    key3: {r: 1, g: 0.0670706, b: 0, a: 0}
-    key4: {r: 1, g: 0.0670706, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 21395
-    ctime2: 40863
-    ctime3: 55127
-    ctime4: 55127
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 7132
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 2
-  biomeGradient:
-    serializedVersion: 2
-    key0: {r: 0.023629185, g: 0.006407972, b: 0.1509434, a: 1}
-    key1: {r: 0.6642647, g: 0.003782494, b: 0.8018868, a: 1}
-    key2: {r: 0, g: 0.009653568, b: 1, a: 0}
-    key3: {r: 0, g: 1, b: 0.0575552, a: 0}
-    key4: {r: 0.89674467, g: 0.9339623, b: 0, a: 0}
-    key5: {r: 0.9614264, g: 0.3902772, b: 0.012857873, a: 0}
-    key6: {r: 1, g: 0.01900063, b: 0, a: 0}
-    key7: {r: 1, g: 1, b: 1, a: 0}
-    ctime0: 5590
-    ctime1: 15998
-    ctime2: 25636
-    ctime3: 33346
-    ctime4: 42405
-    ctime5: 52428
-    ctime6: 59174
-    ctime7: 65150
-    atime0: 7132
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_NumColorKeys: 8
-    m_NumAlphaKeys: 2
-  world: {fileID: 1987411539}
-  planetPrefab: {fileID: 6094110842276932942, guid: be07ac88fa6407a4c8f7e69b7b582d90,
-    type: 3}
-  numPoints: 49
-  planetRadius: 75
-  terrainNoiseSettings: {fileID: 11400000, guid: cb8dffcbbdc5c9c4daba93bc48d0afec,
-    type: 2}
-  rainNoiseSettings: {fileID: 11400000, guid: f20ad19f956d6a74786fa888d2f5e7e9, type: 2}
-  tempSettings: {fileID: 11400000, guid: f84fe305edcc6e846a22fe765b6d96df, type: 2}
-  newPlantPolarLocation: {x: 3.508, y: 5.23, z: 0}
-  plantSettings: {fileID: 11400000, guid: 686a16bf75345ca4094f5069cf19abaf, type: 2}
---- !u!114 &1987411542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987411539}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca09ed4659dcc13469cf0fe657c78305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 6094110842276932942, guid: be07ac88fa6407a4c8f7e69b7b582d90,
+  planetPrefab: {fileID: 2027092992222705851, guid: 38d46fb5c72c7fd4bad5acace716162a,
     type: 3}
   _plantSettings: {fileID: 11400000, guid: 686a16bf75345ca4094f5069cf19abaf, type: 2}

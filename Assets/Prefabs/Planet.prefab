@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4373294721541583394}
   - component: {fileID: 4373294721541583392}
   - component: {fileID: 2055250569272802391}
+  - component: {fileID: 6094110842276932942}
   m_Layer: 0
-  m_Name: planet
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,8 +103,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4373294721541583396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bf19c52852a18544abdd337a9884b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6094110842276932942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373294721541583396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fc9810a623c224c9f9ea5b07f29cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biomePrefab: {fileID: 7845217226534531239, guid: df2158b0589c3014e8361ff74272312e,
+    type: 3}
+  planetConditions:
+    terrainNoiseSettings: {fileID: 11400000, guid: cb8dffcbbdc5c9c4daba93bc48d0afec,
+      type: 2}
+    rainNoiseSettings: {fileID: 11400000, guid: f20ad19f956d6a74786fa888d2f5e7e9,
+      type: 2}
+    tempSettings: {fileID: 11400000, guid: f84fe305edcc6e846a22fe765b6d96df, type: 2}
+    planetRadius: 75
+  biomes: []

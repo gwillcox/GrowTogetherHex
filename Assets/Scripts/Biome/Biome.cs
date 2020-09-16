@@ -5,8 +5,9 @@ using UnityEngine;
 using WeightedBiomes = System.Collections.Generic.Dictionary<Biome, float>;
 
 /*[Serializable]*/
-public class Biome
+public class Biome : MonoBehaviour
 {
+    [SerializeField] Plant _plantPrefab;
     public Vector3 _worldcoordinates;
     public Vector3 _polarcoordinates;
     public List<Biome> neighbors = new List<Biome>();
@@ -14,8 +15,15 @@ public class Biome
 
     public BiomeConditions _conditions { get; private set; }
     public List<Plant> _plants = new List<Plant>();
+
+    void Start() { }
+
+    void Update() 
+    {
+        Tick();
+    }
     
-    public Biome(Planet planet, Vector3 worldCoordinates)
+    public void Init(Planet planet, Vector3 worldCoordinates)
     {
         _planet = planet;
         _worldcoordinates = worldCoordinates;
@@ -31,10 +39,16 @@ public class Biome
         }
     }
 
-    public void AddPlant(PlantSettings plantSettings, Vector3 postion)
+    public void AddPlant(PlantSettings plantSettings, Vector3 position)
     {
-        Plant newPlant = new Plant(_planet, this, postion, plantSettings);
-        _plants.Add(newPlant);
+        Plant plant = Instantiate(_plantPrefab,
+            _planet.transform.localToWorldMatrix.MultiplyPoint(position),
+            Quaternion.LookRotation(position),
+            transform);
+
+        plant.Init(_planet, this, position, plantSettings);
+        
+        _plants.Add(plant);
     }
 
     public void KillPlant(Plant plant)

@@ -2,47 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant
+public class Plant: MonoBehaviour
 {
-    public PlantSettings _plantSettings;
+    private PlantSettings _plantSettings;
     Vector3 _position;
     Biome _biome;
     Planet _planet;
-    public GameObject _plantObject;
 
-    public Plant(Planet planet, Biome biome, Vector3 position, PlantSettings plantSettings)
+    void Start()
+    {
+    }
+
+    public void Init(Planet planet, Biome biome, Vector3 position, PlantSettings plantSettings)
     {
         _plantSettings = plantSettings;
         _position = position;
         _biome = biome;
         _planet = planet;
+    }
 
-        _plantObject = GameObject.Instantiate(
-            _plantSettings.plantObject,
-            _planet.planetObject.transform.localToWorldMatrix.MultiplyPoint(_position),
-            Quaternion.LookRotation(_position),
-            _planet.planetObject.transform);
+    void Update()
+    {
+        if (_biome != null)
+        {
+            ProcessBiomeConditions(_biome._conditions);
+        }
     }
 
     public BiomeConditions ProcessBiomeConditions(BiomeConditions conditions)
     {
         float plantAffinity = _plantSettings.calcAffinity(conditions.Temperature, conditions.Rainfall);
-        Debug.Log($"Affinity: {plantAffinity}");
+
+        float r_num = Random.Range(0, 1f);
 
         if (plantAffinity < _plantSettings.deathThreshold)
         {
-            Debug.Log("Killed");
             this.KillPlant();
         }
         else
         {
-            Debug.Log("Grew");
             this.Grow();
         }
         
-        if (plantAffinity > _plantSettings.reproductionThreshold)
+        if (plantAffinity > _plantSettings.reproductionThreshold && r_num > 1f)
         {
-            Debug.Log("Reproduced");
             this.Reproduce();
         }
         return null;
@@ -50,6 +53,8 @@ public class Plant
 
     private void Grow()
     {
+        this.transform.localScale = Vector3.one * Mathf.Min(this.transform.localScale[0], 5f) * (1 + .01f*Time.deltaTime);
+
         // not done yet
     }
 
@@ -62,7 +67,7 @@ public class Plant
     }
     public void KillPlant()
     {
-        GameObject.DestroyImmediate(_plantObject);
         _biome.KillPlant(this);
+        GameObject.DestroyImmediate(this);
     }
 }

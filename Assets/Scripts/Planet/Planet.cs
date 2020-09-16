@@ -3,20 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // A planet holds a mesh, a set of temperatures, elevations, and rainfalls.
-[Serializable]
-public class Planet
+[Serializable, RequireComponent(typeof(MeshFilter))]
+public class Planet : MonoBehaviour
 {
+    public Biome biomePrefab;
     public PlanetConditions planetConditions;
     public List<Biome> biomes = new List<Biome>();
-    public GameObject planetObject;
+    public GameObject planetObject { get; private set; }
+    private Mesh mesh;
+
+    void Start()
+    {
+        mesh = GetComponent<MeshFilter>().mesh;
+        GetComponent<MeshCollider>().sharedMesh = mesh;
+
+        planetObject = GetComponent<GameObject>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void CreateBiomes(Vector3[] vertices, int[] triangles)
     {
-        biomes = new List<Biome>(); 
+        if (biomes.Count >0 && biomes != null)
+        {
+            foreach (var biome in biomes)
+            {
+                GameObject.DestroyImmediate(biome?.gameObject);
+            }
+            biomes.Clear();
+        }
+
+        biomes = new List<Biome>();
         
         for (int i = 0; i<vertices.Length; i++)
         {
-            biomes.Add(new Biome(this, vertices[i])); 
+            Biome newBiome = Instantiate(biomePrefab, transform);
+            newBiome.Init(this, vertices[i]);
+            biomes.Add(newBiome); 
         }
 
         for (int i=0; i<triangles.Length; i+=3)

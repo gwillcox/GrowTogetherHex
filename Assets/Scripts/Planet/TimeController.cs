@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-    public Planet _planet;
+    public Planet _planet { get; private set; }
+    public Planet planetPrefab;
 
     private Mesh _planetMesh;
 
@@ -17,13 +18,13 @@ public class TimeController : MonoBehaviour
 
     public void InitWorld()
     {
-        _planetMesh = _planet.planetObject.GetComponent<MeshFilter>().sharedMesh;
+        _planet = Instantiate(planetPrefab, transform);
+        _planetMesh = _planet.GetComponent<MeshFilter>().sharedMesh;
         _planet.CreateBiomes(_planetMesh.vertices, _planetMesh.triangles);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 500; i++)
         {
             Vector3 randomPolar = new Vector3(1f, Random.Range(-3.14f, 3.14f), Random.Range(-20f, 3.14f));
-            Debug.Log($"Trying to place at: {randomPolar}");
             PlacePlant.placeNew(randomPolar, _planet, _plantSettings);
         }
     }
@@ -38,12 +39,12 @@ public class TimeController : MonoBehaviour
         }
     }
 
+
     public void Tick()
     {
         foreach (var biome in _planet.biomes)
-        {
-            _planet.planetConditions.tempSettings.offset += Random.insideUnitSphere / 10f;
-            _planet.UpdateBiomeTemperatures();
+        {/*
+            _planet.planetConditions.tempSettings.offset += Random.insideUnitSphere / 10f;*/
             biome.Tick();
         }
     }

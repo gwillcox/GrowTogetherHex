@@ -16,13 +16,17 @@ public class CreatePlanetEditor : Editor
         DrawSettingsEditor(planet.rainNoiseSettings, ref planet.rainNoiseSettings.foldout);
         DrawSettingsEditor(planet.tempSettings, ref planet.tempSettings.foldout);
 
-        if (GUILayout.Button("Redraw"))
+        if (GUILayout.Button("Reinitialize"))
         {
-            planet.UpdateMesh();
+            planet.ResetMesh();
         }
         if (GUILayout.Button("Restart"))
         {
             planet.Restart();
+        }
+        if (GUILayout.Button("Redraw"))
+        {
+            planet.UpdateMesh();
         }
         if (GUILayout.Button("Save"))
         {
