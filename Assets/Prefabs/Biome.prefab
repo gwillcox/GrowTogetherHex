@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659e7bf417e9446cbfc630ad6f35b1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantPrefab: {fileID: 8056323968779069527, guid: 8f6cb2072c558b847ace720cca2e39b7,
+  _plantPrefab: {fileID: 5150010571377482612, guid: 0591555c9c317844f8f1bf05562f806f,
     type: 3}
   _worldcoordinates: {x: 0, y: 0, z: 0}
   _polarcoordinates: {x: 0, y: 0, z: 0}

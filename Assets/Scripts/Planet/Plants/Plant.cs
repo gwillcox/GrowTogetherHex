@@ -68,6 +68,6 @@ public class Plant: MonoBehaviour
     public void KillPlant()
     {
         _biome.KillPlant(this);
-        GameObject.DestroyImmediate(this);
+        GameObject.DestroyImmediate(this.gameObject);
     }
 }

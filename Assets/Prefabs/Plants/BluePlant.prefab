@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3207718860475322332}
   - component: {fileID: 5150010571377482612}
   m_Layer: 0
-  m_Name: Plant2
+  m_Name: LoTempGrass 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4843a18d8aa4bde4db4b69528057f979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantObject: {fileID: 3037800306211280437}
 --- !u!1 &5822169182524097026
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +103,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 42113c2cd20668646a65375f8fc266a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

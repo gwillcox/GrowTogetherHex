@@ -14,26 +14,31 @@ public class PlacePlant
         // Instead of instantiating at the vertex, instantiate at the polar position plus altitude. Then, interpolate altitude. 
         List<Biome> closestBiomeList = PlacePlant.FindNearestTwoBiomes(closestBiome, polarLocation);
 
-        Vector3 plantPosWorld = PlacePlant.InterpolatePosition(polarLocation, closestBiome, closestBiomeList[0], closestBiomeList[1]);
-
-        if (PlacePlant.IsPlantable(closestBiome, plantPosWorld))
+        Vector3 plantPosWorld = PlacePlant.InterpolatePosition(polarLocation, closestBiome, closestBiomeList[0], closestBiomeList[1], planet);
+        Vector3 plantPosPlanet = planet.transform.localToWorldMatrix.MultiplyPoint(plantPosWorld);
+        
+        if (PlacePlant.IsPlantable(closestBiome, plantPosPlanet))
         {
-            closestBiome.AddPlant(plantSettings, plantPosWorld);
+            Debug.Log($"Is Plantable! {plantPosPlanet}");
+            closestBiome.AddPlant(plantSettings, plantPosPlanet);
         }
     }
 
-    public static bool IsPlantable(Biome biome, Vector3 worldLocation)
+    public static bool IsPlantable(Biome biome, Vector3 planetLocation)
     {
+        // TODO: this probably doesn't work, because we're storing plant positions in the world frame rather than planet frame
+        
         // Discovers whether the plant has any overlap with other plants. Assumes a radius of 1. 
-        float radiusPlant1 = 3f;
-        float radiusPlant2 = 3f;
+        float radiusPlant1 = .3f;
+        float radiusPlant2 = .3f;
 
         bool plantable = true;
 
         for (int i = 0; i < biome._plants.Count; i++)
         {
             Vector3 plant2Pos = biome._plants[i].transform.position;
-            if (Vector3.Distance(worldLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
+            Debug.Log($"Existing: {plant2Pos}, New: {planetLocation}");
+            if (Vector3.Distance(planetLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
             {
                 plantable = false;
             }
@@ -46,7 +51,7 @@ public class PlacePlant
                 for (int i = 0; i < biome._plants.Count; i++)
                 {
                     Vector3 plant2Pos = biome._plants[i].transform.position;
-                    if (Vector3.Distance(worldLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
+                    if (Vector3.Distance(planetLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
                     {
                         plantable = false;
                     }
@@ -58,7 +63,7 @@ public class PlacePlant
     }
 
 
-    public static Vector3 InterpolatePosition(Vector3 polarLocation, Biome biome1, Biome biome2, Biome biome3)
+    public static Vector3 InterpolatePosition(Vector3 polarLocation, Biome biome1, Biome biome2, Biome biome3, Planet planet)
     {
         float[] distanceContribution = new float[3];
         Biome[] biomes = { biome1, biome2, biome3 };
@@ -82,7 +87,7 @@ public class PlacePlant
             locationWorld += biomes[i]._worldcoordinates * weights[i];
         }
 
-        return locationWorld;
+        return  locationWorld;
     }
 
     public static List<Biome> FindNearestTwoBiomes(Biome closestBiome, Vector3 polarLocation)
@@ -92,6 +97,13 @@ public class PlacePlant
         List<Biome> neighbors = new List<Biome>();
         for (int i = 0; i < closestBiome.neighbors.Count; i++) { neighbors.Add(closestBiome.neighbors[i]); }
 
+        if (neighbors.Count < 2) { 
+            // Not sure why this would be the case, but it only causes an error in 1/5000 random placements. 
+            Debug.Log("Failed to place! Not enough Neighbors");
+            return new List<Biome> { closestBiome, closestBiome };
+        }
+
+        Debug.Log($"{neighbors.Count}, {closestBiome._worldcoordinates}");
         int secondClosestIndex = PlacePlant.FindClosestBiome(neighbors, polarLocation);
         Biome secondClosestBiome = closestBiome.neighbors[secondClosestIndex];
         neighbors.Remove(secondClosestBiome);

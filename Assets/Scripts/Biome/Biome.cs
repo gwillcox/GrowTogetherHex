@@ -41,19 +41,22 @@ public class Biome : MonoBehaviour
 
     public void AddPlant(PlantSettings plantSettings, Vector3 position)
     {
-        Plant plant = Instantiate(_plantPrefab,
-            _planet.transform.localToWorldMatrix.MultiplyPoint(position),
+        GameObject plantObject = Instantiate(plantSettings.plantObject, 
+            position,
             Quaternion.LookRotation(position),
             transform);
 
+        Plant plant = plantObject.GetComponent<Plant>();
         plant.Init(_planet, this, position, plantSettings);
-        
+
         _plants.Add(plant);
+        Debug.Log($"Added a plant: {_plants.Count}");
     }
 
     public void KillPlant(Plant plant)
     {
         _plants.Remove(plant); 
+        Debug.Log("Removed a plant");
     }
 
     public void KillAllPlants()

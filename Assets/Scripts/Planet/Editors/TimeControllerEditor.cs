@@ -20,6 +20,10 @@ public class TimeControllerEditor : Editor
             timeController.ResetWorld();
             timeController.InitWorld();
         }
+        if (GUILayout.Button("Populate"))
+        {
+            timeController.PopulateWorld();
+        }
         if (GUILayout.Button("Tick"))
         {
             timeController.Tick();

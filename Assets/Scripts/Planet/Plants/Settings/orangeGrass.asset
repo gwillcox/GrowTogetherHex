@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9b3ac7b14092a429ce7eefa5365023, type: 3}
-  m_Name: lowTempGrass
+  m_Name: orangeGrass
   m_EditorClassIdentifier: 
   foldout: 0
-  plantObject: {fileID: 3037800306211280437, guid: d747ee866de181d40a70a3968717f829,
+  plantObject: {fileID: 3037800306211280437, guid: aee9e6be6d2ad0a4da8b85f389c8c1d9,
     type: 3}
   temperatureAffinity:
     serializedVersion: 2
@@ -28,8 +28,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 10.377368
-      value: 0.71310997
+      time: 6.7740726
+      value: 0.7320157
       inSlope: 0.001584346
       outSlope: 0.001584346
       tangentMode: 0
@@ -37,13 +37,13 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 18.307186
-      value: 1.0084562
-      inSlope: 0.00037988953
-      outSlope: 0.00037988953
+      time: 25.02993
+      value: 0.8461995
+      inSlope: 0.0006144897
+      outSlope: 0.0006144897
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.07382829
+      inWeight: 0.086344145
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 30.060312
@@ -70,23 +70,23 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.52430916
     - serializedVersion: 3
-      time: 38.774197
-      value: 0.68416166
-      inSlope: 0.0033595553
-      outSlope: 0.0033595553
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.31457907
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 173.53516
-      value: 0.9800301
-      inSlope: 0.0025781074
-      outSlope: 0.0025781074
+      time: 78.75488
+      value: 0.9960518
+      inSlope: -0.0009783626
+      outSlope: -0.0009783626
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.015624299
+    - serializedVersion: 3
+      time: 126.22302
+      value: 0.9991085
+      inSlope: 0.00021109318
+      outSlope: 0.00021109318
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3306414
     - serializedVersion: 3
       time: 199.81451
       value: 0.0036964417

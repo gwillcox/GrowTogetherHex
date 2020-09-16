@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flatWorld: 0
   world: {fileID: 0}
+  movementSpeed: 1.92
+  turnSpeed: 2.88
 --- !u!114 &982063476934507648
 MonoBehaviour:
   m_ObjectHideFlags: 0
