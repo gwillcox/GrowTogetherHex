@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: TerrainSettings
   m_EditorClassIdentifier: 
   foldout: 1
-  size: 0.2
+  size: 0.15
   frequency: 0.35
   offset: {x: 29.79, y: 22.6, z: 8.1}
   octaves: 13
   persistence: 0.607
   lacunarity: 0.56
-  minValue: 0
+  minValue: -1
   ridgeNoise: {fileID: 11400000, guid: 425db0a8470164d44a30dd96c682ed76, type: 2}

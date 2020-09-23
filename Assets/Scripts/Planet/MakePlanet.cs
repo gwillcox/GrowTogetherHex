@@ -26,12 +26,6 @@ public class MakePlanet : MonoBehaviour
     public Planet planetPrefab;
     private Planet planet;
 
-    [Range(1, 250)]
-    public int numPoints;
-
-    [Range(1, 100)]
-    public float planetRadius;
-
     private Mesh mesh;
 
     private Vector3[] vertices;
@@ -41,11 +35,9 @@ public class MakePlanet : MonoBehaviour
     private List<Vector3> interpPoints = new List<Vector3>();
     private List<int> interpTris = new List<int>();
 
-    public TerrainSettings terrainNoiseSettings;
-    public RainSettings rainNoiseSettings;
-    public TempSettings tempSettings;
+    public PlanetSettings planetSettings;
 
-    public Vector3 newPlantPolarLocation;
+    public Vector3 newPlantPolarLocation;   
     public PlantSettings plantSettings;
 
     private void Update()
@@ -72,7 +64,7 @@ public class MakePlanet : MonoBehaviour
 
     public void Restart()
     {
-        (interpPoints, interpTris) = CreateSphere.CreateIcosahedron(numPoints);
+        (interpPoints, interpTris) = CreateSphere.CreateIcosahedron(planetSettings.numTerrainPoints);
         UpdateMesh();
     }
 
@@ -83,9 +75,9 @@ public class MakePlanet : MonoBehaviour
         for (int i = 0; i < interpPoints.Count; i++)
         {
             Vector3 sphericalComponents = SphericalGeometry.WorldToPolar(interpPoints[i]);
-            float radiusChange = terrainNoiseSettings.calcTerrainNoise(interpPoints[i] / planetRadius);
+            float radiusChange = planetSettings.terrainSettings.calcTerrainNoise(interpPoints[i] / planetSettings.planetRadius);
 
-            Vector3 newSphericalPosition = sphericalComponents + new Vector3(radiusChange*planetRadius+0.01f, 0, 0);
+            Vector3 newSphericalPosition = sphericalComponents + new Vector3(radiusChange * planetSettings.planetRadius + 0.01f, 0, 0);
             interpPoints[i] = SphericalGeometry.PolarToWorld(newSphericalPosition);
         }
     }
@@ -96,7 +88,7 @@ public class MakePlanet : MonoBehaviour
         for (int i = 0; i < interpPoints.Count; i++)
         {
             Vector3 pointInPolar = SphericalGeometry.WorldToPolar(interpPoints[i]);
-            pointInPolar[0] = planetRadius;  // set the radius to the planet's radius. 
+            pointInPolar[0] = planetSettings.planetRadius;  // set the radius to the planet's radius. 
             interpPoints[i] = SphericalGeometry.PolarToWorld(pointInPolar);
         }
 
@@ -219,13 +211,14 @@ public class MakePlanet : MonoBehaviour
 
     public void SetPlanetBiomes()
     {
-        planet.CreateBiomes(vertices, triangles);
+        planet.CreateBiomes(interpPoints.ToArray(), interpTris.ToArray());
         Debug.Log($"Made biomes: {planet.biomes.Count}");
     }
 
 
     public void SetPlanetConditions()
-    {
+    {  
+        // TODO : Define a method to interpolate between the biome-level traits and 
         planet.SetBiomeConditions();
         Debug.Log($"Set Conditions: {planet.biomes[0]._conditions}");
     }

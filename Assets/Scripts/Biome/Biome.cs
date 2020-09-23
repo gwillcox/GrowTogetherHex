@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 using WeightedBiomes = System.Collections.Generic.Dictionary<Biome, float>;
 
 /*[Serializable]*/
@@ -72,11 +73,44 @@ public class Biome : MonoBehaviour
 
     public void Tick()
     {
+/*        CalculateShades();*/
+
         Plant[] _plantsCopy = new Plant[_plants.Count];
         _plants.CopyTo(_plantsCopy);
         foreach (var plant in _plantsCopy)
         {
             plant.ProcessBiomeConditions(_conditions);
+        }
+    }
+
+    public void CalculateShades()
+    {
+        // Calculate the shade that each plant throws on each other plant. 
+        var plantList = new List<Plant>();
+        foreach (var plant in _plants)
+        {
+            plantList.Add(plant);
+        }
+        foreach (var biome in neighbors)
+        {
+            foreach (var plant in biome._plants)
+            {
+                plantList.Add(plant);
+            }
+        }
+
+        foreach (var plant in plantList)
+        {
+            float totalShade = 0f;
+            foreach (var plant2 in plantList)
+            {
+                if (plant2 != plant)
+                {
+                    totalShade += plant2.CalcSentShade(plant.GetShadeCircleCenter());
+                }
+            }
+
+            plant.shade = totalShade;
         }
     }
 
@@ -87,6 +121,8 @@ public class Biome : MonoBehaviour
 
     private void ProcessConditions(WeightedBiomes neighborConditions)
     {
+
+
         // First calculate the biome's internal conditions based on its plants
         var currentConditions = _conditions;
         var postPlantConditions = new List<BiomeConditions>();

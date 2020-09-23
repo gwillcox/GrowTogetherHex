@@ -20,9 +20,9 @@ public class movement : MonoBehaviour
     void Update()
     {
         
-        float wobble = (float)Math.Abs(Math.Sin(Time.time * 5))/500;
-        float forwardMovement = Input.GetAxis("Vertical");
-        float rotationAmount = Input.GetAxis("Horizontal");
+        float wobble = (float)Math.Abs(Math.Sin(Time.time * 5))/500 * Time.deltaTime;
+        float forwardMovement = Input.GetAxis("Vertical") * Time.deltaTime;
+        float rotationAmount = Input.GetAxis("Horizontal") * Time.deltaTime;
 
         if (flatWorld)
         {

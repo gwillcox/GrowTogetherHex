@@ -18,7 +18,6 @@ public class PlanetConditions
     // temp in Average deg. C, 
     // rainfall in Annaul Precipitation (cm)
 
-
     public BiomeConditions CalcBiomeConditions(Biome biome)
     {
         // TODO: move into BiomeConditions
