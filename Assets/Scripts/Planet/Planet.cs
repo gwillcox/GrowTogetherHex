@@ -7,7 +7,7 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
     public Biome biomePrefab;
-    public PlanetConditions planetConditions;
+    public PlanetSettings planetSettings;
     public List<Biome> biomes = new List<Biome>();
     public GameObject planetObject { get; private set; }
     private Mesh mesh;
@@ -20,7 +20,6 @@ public class Planet : MonoBehaviour
 
         planetObject = GetComponent<GameObject>();
         sun = GetComponentInChildren<Light>();
-        Debug.Log($"Sun: {sun}, {sun.type}, {sun.intensity}, {sun.transform.rotation}");
     }
 
     // Update is called once per frame
@@ -28,6 +27,7 @@ public class Planet : MonoBehaviour
     {
 
     }
+
     public void CreateBiomes(PlanetSettings planetSettings)
     {
         if (biomes.Count > 0 && biomes != null)
@@ -111,7 +111,7 @@ public class Planet : MonoBehaviour
     {
         for (int i=0; i<biomes.Count; i++)
         {
-            BiomeConditions biomeConditions = planetConditions.CalcBiomeConditions(biomes[i]);
+            BiomeConditions biomeConditions = planetSettings.CalcBiomeConditions(biomes[i]);
 
             biomes[i].SetConditions(biomeConditions);
         }
@@ -121,7 +121,7 @@ public class Planet : MonoBehaviour
     {
         for (int i = 0; i < biomes.Count; i++)
         {
-            float temp = planetConditions.tempSettings.calcTemp(biomes[i]._worldcoordinates, planetConditions.planetRadius);
+            float temp = planetSettings.tempSettings.calcTemp(biomes[i]._worldcoordinates, planetSettings.planetRadius);
 
             biomes[i]._conditions.Temperature = temp;
         }

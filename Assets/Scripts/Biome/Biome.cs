@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.UI;
-using WeightedBiomes = System.Collections.Generic.Dictionary<Biome, float>;
 
 /*[Serializable]*/
 public class Biome : MonoBehaviour
@@ -16,12 +12,21 @@ public class Biome : MonoBehaviour
 
     public BiomeConditions _conditions { get; private set; }
     public List<Plant> _plants = new List<Plant>();
+    public List<Plant> _plantsToKill = new List<Plant>();
+    public List<Plant> _plantsToAdd = new List<Plant>();
+
+    public float squareDistanceToPlayer = 0f;
 
     void Start() { }
 
     void Update() 
     {
         Tick();
+    }
+
+    public void CalcDistanceToPlayer(Vector3 playerPosition)
+    {
+        squareDistanceToPlayer = (transform.position - playerPosition).sqrMagnitude;
     }
     
     public void Init(Planet planet, Vector3 worldCoordinates)
@@ -30,6 +35,7 @@ public class Biome : MonoBehaviour
         _worldcoordinates = worldCoordinates;
         _polarcoordinates = SphericalGeometry.WorldToPolar(_worldcoordinates);
         _conditions = new BiomeConditions();
+        transform.position = worldCoordinates;
     }
 
     public void AddNeighbor(Biome neighborBiome)
@@ -50,108 +56,67 @@ public class Biome : MonoBehaviour
         Plant plant = plantObject.GetComponent<Plant>();
         plant.Init(_planet, this, position, plantSettings);
 
-        _plants.Add(plant);
-        Debug.Log($"Added a plant: {_plants.Count}");
+        _plantsToAdd.Add(plant);
     }
 
     public void KillPlant(Plant plant)
     {
-        _plants.Remove(plant); 
-        Debug.Log("Removed a plant");
+        _plantsToKill.Add(plant);
     }
 
     public void KillAllPlants()
     {
-        Plant[] _plantCopy = new Plant[_plants.Count];
-        _plants.CopyTo(_plantCopy);
-
-        foreach (var plant in _plantCopy)
+        foreach (var plant in _plants)
         {
             plant.KillPlant();
         }
+        DestroyDeadPlants();
+    }
+
+    public void DestroyDeadPlants()
+    {
+        foreach (var deadPlant in _plantsToKill)
+        {
+            _plants.Remove(deadPlant);
+            Destroy(deadPlant);
+        }
+        // Reset the plantsToKill array
+        _plantsToKill = new List<Plant>();
+    }
+
+    public void AddNewPlants()
+    {
+        foreach (var newPlant in _plantsToAdd)
+        {
+            _plants.Add(newPlant);
+        }
+        // Reset the plantsToAdd array
+        _plantsToAdd = new List<Plant>();
     }
 
     public void Tick()
     {
-/*        CalculateShades();*/
-
-        Plant[] _plantsCopy = new Plant[_plants.Count];
-        _plants.CopyTo(_plantsCopy);
-        foreach (var plant in _plantsCopy)
-        {
-            plant.ProcessBiomeConditions(_conditions);
+        if (_plantsToAdd.Count > 0)
+        { // If there are any new plants, add them to our plants list. 
+            AddNewPlants();
         }
-    }
 
-    public void CalculateShades()
-    {
-        // Calculate the shade that each plant throws on each other plant. 
-        var plantList = new List<Plant>();
-        foreach (var plant in _plants)
+        if (_plants.Count > 0 && Random.Range(0f,1f) < 1000f/squareDistanceToPlayer)
         {
-            plantList.Add(plant);
-        }
-        foreach (var biome in neighbors)
-        {
-            foreach (var plant in biome._plants)
+            foreach (var plant in _plants)
             {
-                plantList.Add(plant);
+                plant.ProcessBiomeConditions(_conditions);
             }
         }
 
-        foreach (var plant in plantList)
+        if (_plantsToKill.Count > 0)
         {
-            float totalShade = 0f;
-            foreach (var plant2 in plantList)
-            {
-                if (plant2 != plant)
-                {
-                    totalShade += plant2.CalcSentShade(plant.GetShadeCircleCenter());
-                }
-            }
-
-            plant.shade = totalShade;
+            DestroyDeadPlants();
         }
     }
 
     public void SetConditions(BiomeConditions biomeConditions)
     {
         _conditions = biomeConditions;
-    }
-
-    private void ProcessConditions(WeightedBiomes neighborConditions)
-    {
-
-
-        // First calculate the biome's internal conditions based on its plants
-        var currentConditions = _conditions;
-        var postPlantConditions = new List<BiomeConditions>();
-        foreach (var plant in _plants)
-        {
-            postPlantConditions.Add(plant.ProcessBiomeConditions(currentConditions));
-        }
-
-        _conditions = AverageConditions(postPlantConditions);
-        WeightedBiomes allConditions = neighborConditions
-            .Concat(new WeightedBiomes {{this, 1f}})
-            .ToDictionary(x => x.Key, x => x.Value);
-
-        // Next take into account the neighboring conditions
-        _conditions = ProcessWeightedBiomes(allConditions);
-    }
-
-    private BiomeConditions AverageConditions(List<BiomeConditions> postPlantConditions)
-    {
-        return null;
-    }
-
-    private BiomeConditions ProcessWeightedBiomes(WeightedBiomes neighborConditions)
-    {
-        return null;
-    }
-
-    private WeightedBiomes GetWeightedNeighbors()
-    {
-        return new WeightedBiomes();
     }
 }

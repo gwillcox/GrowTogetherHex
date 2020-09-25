@@ -16,7 +16,7 @@ MonoBehaviour:
   size: 1
   frequency: 1.048
   offset: {x: -6.490845, y: -12.562337, z: -10.279526}
-  octaves: 15
+  octaves: 4
   persistence: 0.239
   lacunarity: 0.447
   minValue: -1

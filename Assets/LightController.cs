@@ -16,7 +16,7 @@ public class LightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timePassed += Time.deltaTime * timeScale;
+        timePassed += Time.deltaTime * 0.05f;
         transform.localPosition = distance * new Vector3(Mathf.Sin(timePassed),  0, Mathf.Cos(timePassed));
         transform.LookAt(new Vector3(0, 0, 0));
     }

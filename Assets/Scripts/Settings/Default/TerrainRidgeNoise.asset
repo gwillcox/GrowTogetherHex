@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: TerrainRidgeNoise
   m_EditorClassIdentifier: 
   foldout: 1
-  size: 8
-  frequency: 0.462
-  offset: {x: -12.73, y: 0.71, z: 168.03}
+  size: 20
+  frequency: 0.2
+  offset: {x: 1.42, y: 5.7, z: 3.6}
   octaves: 11
-  persistence: 0.779
+  persistence: 0.699
   lacunarity: 0.635
-  minValue: 0
+  minValue: -0.45

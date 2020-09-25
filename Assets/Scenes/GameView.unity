@@ -1416,6 +1416,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -229.891, y: -214.804, z: -15.1380005}
+--- !u!1 &1509878986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1034705299062720, guid: 6fe21bfb8ec90c348bd6a7d150c33d9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1702231130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1702231130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1910,6 +1916,8 @@ MonoBehaviour:
   world: {fileID: 1987411539}
   planetPrefab: {fileID: 6094110842276932942, guid: be07ac88fa6407a4c8f7e69b7b582d90,
     type: 3}
+  eggboy: {fileID: 1509878986}
+  timeScale: 1
   n_plants: 185
   populatePlant: {fileID: 11400000, guid: 083685e0f44e13e4491a6b7c9a54f6db, type: 2}
   plantOptions:

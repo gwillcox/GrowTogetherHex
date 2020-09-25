@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlacePlant
 {
+
     // Todo: maybe refactor so that we deal with world, rather than polar coords?
     public static void placeNew(Vector3 polarLocation, Planet planet, PlantSettings plantSettings)
     {
-        int closestIndex = PlacePlant.FindClosestBiome(planet.biomes, polarLocation);
-        Biome closestBiome = planet.biomes[closestIndex];
+        Biome closestBiome = planet.biomes[PlacePlant.FindClosestBiome(planet.biomes, polarLocation)];
 
         // Instead of instantiating at the vertex, instantiate at the polar position plus altitude. Then, interpolate altitude. 
         List<Biome> closestBiomeList = PlacePlant.FindNearestTwoBiomes(closestBiome, polarLocation);
@@ -17,14 +17,13 @@ public class PlacePlant
         Vector3 plantPosWorld = PlacePlant.InterpolatePosition(polarLocation, closestBiome, closestBiomeList[0], closestBiomeList[1], planet);
         Vector3 plantPosPlanet = planet.transform.localToWorldMatrix.MultiplyPoint(plantPosWorld);
         
-        if (PlacePlant.IsPlantable(closestBiome, plantPosPlanet))
+        if (PlacePlant.IsPlantable(closestBiome, plantPosPlanet, planet))
         {
-            Debug.Log($"Is Plantable! {plantPosPlanet}");
             closestBiome.AddPlant(plantSettings, plantPosPlanet);
         }
     }
 
-    public static bool IsPlantable(Biome biome, Vector3 planetLocation)
+    public static bool IsPlantable(Biome biome, Vector3 planetLocation, Planet planet)
     {
         // TODO: this probably doesn't work, because we're storing plant positions in the world frame rather than planet frame
         
@@ -32,34 +31,34 @@ public class PlacePlant
         float radiusPlant1 = .3f;
         float radiusPlant2 = .3f;
 
-        bool plantable = true;
+        if (planetLocation.magnitude < planet.planetSettings.planetRadius+1f)
+        {
+            return false;
+        }
 
         for (int i = 0; i < biome._plants.Count; i++)
         {
             Vector3 plant2Pos = biome._plants[i].transform.position;
-            Debug.Log($"Existing: {plant2Pos}, New: {planetLocation}");
             if (Vector3.Distance(planetLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
             {
-                plantable = false;
+                return false;
             }
         }
 
-        if (plantable)
+        for (int j = 0; j < biome.neighbors.Count; j++)
         {
-            for (int j = 0; j < biome.neighbors.Count; j++)
+            for (int i = 0; i < biome._plants.Count; i++)
             {
-                for (int i = 0; i < biome._plants.Count; i++)
+                Vector3 plant2Pos = biome._plants[i].transform.position;
+                if (Vector3.Distance(planetLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
                 {
-                    Vector3 plant2Pos = biome._plants[i].transform.position;
-                    if (Vector3.Distance(planetLocation, plant2Pos) < (radiusPlant1 + radiusPlant2))
-                    {
-                        plantable = false;
-                    }
+                    return false;
                 }
             }
         }
 
-        return plantable;
+        // We haven't failed any test cases... so let's plant!
+        return true;
     }
 
 
@@ -103,7 +102,6 @@ public class PlacePlant
             return new List<Biome> { closestBiome, closestBiome };
         }
 
-        Debug.Log($"{neighbors.Count}, {closestBiome._worldcoordinates}");
         int secondClosestIndex = PlacePlant.FindClosestBiome(neighbors, polarLocation);
         Biome secondClosestBiome = closestBiome.neighbors[secondClosestIndex];
         neighbors.Remove(secondClosestBiome);
@@ -116,6 +114,11 @@ public class PlacePlant
 
     public static int FindClosestBiome(List<Biome> biomes, Vector3 polarLocation)
     {
+        // TODO: Make this more efficient using a greedy search over the unit sphere. 
+        // Choose a random vertex, calculate its distance and the distance of each of its neighbors to the polarlocation.
+        // If any of the neighbors are close than this vertex, then set the neighbor as the new vertex and recalculate. 
+        // If none of the neighbors are closer than this vertex, end the calculation. 
+
         // find the nearest vertex, and the second two closest neighbors.
         int closestIndex = -1;
         float closestDist = Mathf.Infinity;

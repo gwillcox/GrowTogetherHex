@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -12,23 +9,25 @@ public class Plant: MonoBehaviour
     Biome _biome;
     Planet _planet;
     private Mesh plantMesh;
+    private Vector3[] plantVertexArray;
+    private Transform plantMeshTransform;
 
     private float scale = 1f;
-    [SerializeField]
-    private float widestHeight = 0.1f;
-    [SerializeField]
-    private float widestRadius = 1f;
-
-    public Vector3 rayDir;
-    public Vector3 rayStart;
 
     public int meshInt;
+    public float illumination = 0f;
+    public float affinity;
 
-    public float shade = 0f;
+    private float directLight = 0f;
+    private float indirectLight = 0f;
+    private Vector3 testMeshVertex;
 
-    public Vector3 shadePos;
+    public bool showMesh = false;
 
     void Start()
+    {
+    }
+    void Update()
     {
     }
 
@@ -42,27 +41,22 @@ public class Plant: MonoBehaviour
         gameObject.transform.localScale = Vector3.one * scale; // make the plant small to start. 
 
         plantMesh = gameObject.GetComponentInChildren<MeshFilter>().mesh;
+        plantMeshTransform = transform.GetChild(0).GetComponent<Transform>(); // Assumes that every plant has exactly one child transform.
+        Debug.Log(plantMeshTransform.localRotation);
+
+        plantVertexArray = plantMesh.vertices;
+        UpdateRandomVertex();
     }
 
-    void Update()
-    {
-        if (_biome != null)
-        {
-            ProcessBiomeConditions(_biome._conditions);
-        }
-    }
 
     public BiomeConditions ProcessBiomeConditions(BiomeConditions conditions)
     {
-        shade = CalcRayShade();
+        illumination = CalcRayShade();
 
-        float plantAffinity = _plantSettings.calcAffinity(conditions.Temperature, conditions.Rainfall, shade);
+        affinity = _plantSettings.calcAffinity(conditions.Temperature, conditions.Rainfall, illumination);
 
-        float r_num = Random.Range(0, 1f);
-
-        if (plantAffinity < _plantSettings.deathThreshold)
+        if (affinity < _plantSettings.deathThreshold)
         {
-            Debug.Log($"Killing: {plantAffinity}");
             this.KillPlant();
         }
         else
@@ -70,119 +64,111 @@ public class Plant: MonoBehaviour
             this.Grow();
         }
         
-        if (plantAffinity > _plantSettings.reproductionThreshold && r_num > 0.999f)
+        if (affinity > _plantSettings.reproductionThreshold && Random.Range(0,1f)> 0.999f)
         {
             this.Reproduce();
         }
         return null;
     }
 
-    // TODO: update this to assume the sun is coming from the equator
-    public float CalcSentShade(Vector3 location)
-    {
-        float castShade = 0f;
-        float distanceToRim = 0f;
-        float theta = 0f;
-
-        // Location is the top of the light-recieving circle of the plant in question. 
-        float heightDifference = scale * widestHeight - location[2];
-        if (heightDifference > 0)
-        {
-            distanceToRim = new Vector2(_position.x - location.x, _position.y - location.y).magnitude - widestRadius * scale;
-            theta = Mathf.Atan2(heightDifference, distanceToRim);
-
-            castShade = Mathf.InverseLerp(Mathf.PI / 2 - 1f, Mathf.PI / 2 + 1f, theta);
-        }
-
-        castShade = (1 - shade) * castShade;
-
-        return castShade;
-    }
-
     public float CalcRayShade()
-    { 
-        int count = 0;
-        int numRays = 1;
-        // Calculates ambient light by determining whether a given random ray can see the sky or not. 
-        Vector3 selectedVertex = transform.position + Quaternion.Euler(0, 0, 0) * plantMesh.vertices[Random.Range(0, plantMesh.vertices.Length)];
-        for (int i = 0; i < numRays; i++)
+    {
+        // Update the vertex we want to use once every 100 frames. This appears compute-intensive. 
+        if (Random.Range(0f, 1f) < 0.01)
         {
-            selectedVertex = transform.position + Quaternion.Euler(0, 0, 0) * plantMesh.vertices[Random.Range(0, plantMesh.vertices.Length)];
-            Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-            bool rayHitsSky = !Physics.Raycast(selectedVertex, randomDirection);
-            count += rayHitsSky?1:0;
+            UpdateRandomVertex();
         }
 
-        Vector3 sunDirection = _planet.sun.transform.position - transform.position;
-        bool rayHitsSun = !Physics.Raycast(selectedVertex, sunDirection);
-        float sunlight = rayHitsSun ? 1f : 0f;
+        // Calculates ambient light by determining whether a given random ray can see the sky or not. 
+        indirectLight = Physics.Raycast(
+            testMeshVertex,
+            new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized
+            ) ? 0 : 1;
 
-        if (rayHitsSun) { Debug.Log("HitSun"); }
+        directLight = RayHitsSun() ? 1f : 0f;
 
-        shade = shade * .95f + .01f * count / numRays + 0.04f * sunlight;
-        return shade;
+        // Todo: allow plants to process this differently. 
+        illumination = illumination * .95f + .01f * indirectLight + 0.04f * directLight;
+
+        return illumination;
     }
 
-    public Vector3 GetShadeCircleCenter()
+    public bool RayHitsSun()
     {
-        return transform.position + Quaternion.Euler(transform.rotation.eulerAngles) * new Vector3(0, 0, scale * widestHeight);
+        return !Physics.Raycast(
+            testMeshVertex,
+            _planet.sun.transform.position - transform.position,
+            500f);
     }
 
-    public float GetShadeRadius()
+    public void UpdateRandomVertex()
     {
-        return scale * widestRadius;
+        testMeshVertex = plantMeshTransform.localToWorldMatrix.MultiplyPoint(
+                        plantVertexArray[Random.Range(0, plantMesh.vertices.Length)]
+                        );
     }
 
     private void Grow()
     { 
-        scale = Mathf.Min(scale, 2f) * (1 + .01f * Time.deltaTime);
+        scale = Mathf.Min(scale, 2f) * (1 + affinity * .03f * Time.deltaTime);
         this.transform.localScale = Vector3.one * scale;
-
+/*
         // Iterate over plants. If any are too close, destroy them! 
         foreach (var pl in _biome._plants)
         {
             if (pl != this)
             {
                 float dist = Vector3.Distance(pl.transform.position, transform.position);
-/*                if (dist < scale) // TODO: Handle deletion of plants better.
+*//*                if (dist < scale) // TODO: Handle deletion of plants better.
                 {
                     pl.KillPlant();
-                }*/
+                }*//*
             }
-        }
+        }*/
     }
 
     private void Reproduce()
     {
         // Todo: make this more intelligent.
-        Vector3 randomDisplacement = Random.onUnitSphere * 5;
-        Vector3 polarPosition = SphericalGeometry.WorldToPolar(randomDisplacement + _position);
-        PlacePlant.placeNew(polarPosition, _planet, _plantSettings);
+        PlacePlant.placeNew(
+            SphericalGeometry.WorldToPolar(Random.onUnitSphere * 5 + _position),
+            _planet, 
+            _plantSettings
+            );
     }
 
     public void KillPlant()
     {
         _biome.KillPlant(this);
-        GameObject.Destroy(this.gameObject);
     }
 
     void OnDrawGizmosSelected()
     {
+        if (Selection.activeGameObject != transform.gameObject)
+        {
+            return;
+        }
+
+        if (showMesh)
+        {
+            foreach (var vertex in plantMesh.vertices)
+            {
+                Gizmos.color = Color.grey;
+                Gizmos.DrawWireSphere(plantMeshTransform.localToWorldMatrix.MultiplyPoint(
+                        vertex
+                        ),
+                    0.05f
+                    );
+            }
+        }
         Gizmos.DrawWireSphere(transform.position, scale);
-        Handles.Label(transform.position + new Vector3(scale, 0, 0), $"This plant's shade: {shade}");
+        Handles.Label(transform.position + new Vector3(scale, 0, 0), $"Illumination: {illumination}");
 
-        // Draw and label the shade circle
-        Gizmos.DrawWireSphere(GetShadeCircleCenter(), GetShadeRadius());
-        Handles.Label(GetShadeCircleCenter() + Quaternion.Euler(transform.localRotation.eulerAngles) * new Vector3(0, 0, GetShadeRadius()), $"Shade Circle");
+        // Calculates and plots whether the plant can see the sun. 
+        Vector3 selectedVertex = testMeshVertex;
+        bool hit = !Physics.Raycast(selectedVertex, _planet.sun.transform.position - transform.position, 500f);
+        Gizmos.color = hit ? Color.white : Color.red;
+        Gizmos.DrawLine(selectedVertex, _planet.sun.transform.position);
 
-        Gizmos.DrawWireSphere(transform.position + shadePos, 0.25f);
-        Handles.Label(transform.position + shadePos * 1.1f, $"Shade: {shade}");
-
-        // Calculates ambient light by determining whether a given random ray can see the sky or not. 
-        Vector3 selectedVertex = transform.position + Quaternion.Euler(0, 0, 0) * plantMesh.vertices[meshInt];
-        bool rayHitsSky = !Physics.Raycast(selectedVertex, rayDir);
-
-        Gizmos.color = rayHitsSky ? Color.white : Color.red;
-        Gizmos.DrawLine(selectedVertex, selectedVertex + (rayDir*100));
     }
 }

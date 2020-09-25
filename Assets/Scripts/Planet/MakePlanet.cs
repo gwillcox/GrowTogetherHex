@@ -51,15 +51,17 @@ public class MakePlanet : MonoBehaviour
         mesh = new Mesh();
         planet = Instantiate(planetPrefab, world.transform);
         planet.GetComponent<MeshFilter>().sharedMesh = mesh;
+        planet.planetSettings = planetSettings;
     }
 
-    
+
     public void ResetMesh()
     {
-        GameObject.DestroyImmediate(planet);
+        if (planet != null) { GameObject.DestroyImmediate(planet); }
         mesh = new Mesh();      
         planet = Instantiate(planetPrefab, world.transform);
         planet.GetComponent<MeshFilter>().sharedMesh = mesh;
+        planet.planetSettings = planetSettings;
     }
 
     public void Restart()
@@ -212,15 +214,12 @@ public class MakePlanet : MonoBehaviour
     public void SetPlanetBiomes()
     {
         planet.CreateBiomes(interpPoints.ToArray(), interpTris.ToArray());
-        Debug.Log($"Made biomes: {planet.biomes.Count}");
     }
-
 
     public void SetPlanetConditions()
     {  
         // TODO : Define a method to interpolate between the biome-level traits and 
         planet.SetBiomeConditions();
-        Debug.Log($"Set Conditions: {planet.biomes[0]._conditions}");
     }
 
     private void SetMeshUpdate()
@@ -236,7 +235,7 @@ public class MakePlanet : MonoBehaviour
     public void SaveAsAsset()
     {
         Mesh tempMesh = (Mesh)UnityEngine.Object.Instantiate(mesh);
-        AssetDatabase.CreateAsset(tempMesh, "Assets/Scripts/Planet/" + planetName + ".asset");
+        AssetDatabase.CreateAsset(tempMesh, "Assets/Prefabs/Models/" + planetName + ".asset");
     }
 
     public void CreatePlantAtPoint()

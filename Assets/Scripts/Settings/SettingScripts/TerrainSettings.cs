@@ -9,7 +9,7 @@ public class TerrainSettings : NoiseSettings {
     {
         float multiplicativeNoise = this.calcNoise(vertex);
 
-        float ridgeNoise = Mathf.Abs(Mathf.Sin(this.ridgeNoise.calcNoise(vertex)));
+        float ridgeNoise = Mathf.Pow(Mathf.Sin(this.ridgeNoise.calcNoise(vertex)),7f);
 
         float noise = multiplicativeNoise + multiplicativeNoise * (ridgeNoise);
         return noise;

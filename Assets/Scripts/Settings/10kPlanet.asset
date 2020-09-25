@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf126ee9e1c8aa74f9baaab9d1efd8dd, type: 3}
+  m_Name: 10kPlanet
+  m_EditorClassIdentifier: 
+  foldout: 1
+  numTerrainPoints: 49
+  numBiomePoints: 12
+  planetRadius: 75
+  oceanLevel: 74
+  tempSettings: {fileID: 11400000, guid: f84fe305edcc6e846a22fe765b6d96df, type: 2}
+  terrainSettings: {fileID: 11400000, guid: cb8dffcbbdc5c9c4daba93bc48d0afec, type: 2}
+  rainSettings: {fileID: 11400000, guid: f20ad19f956d6a74786fa888d2f5e7e9, type: 2}

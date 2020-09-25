@@ -7,6 +7,10 @@ public class TimeController : MonoBehaviour
     public GameObject world;
     public Planet _planet { get; private set; }
     public Planet planetPrefab;
+    public GameObject eggboy;
+
+    [Range(0,100f)]
+    public float timeScale = 1f;
 
     private Mesh _planetMesh;
 
@@ -23,13 +27,25 @@ public class TimeController : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale != timeScale)
+        {
+            Time.timeScale = timeScale;
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             // TODO: Make a plant appear where eggboy is standing. 
-            Debug.Log("Placed a seed");
             Vector3 plantLocation = new Vector3(-0.015f, 1,0);
             Vector3 newLoc = world.transform.InverseTransformDirection(plantLocation);
             PlaceSeedOnWorld(newLoc);
+        }
+
+        if (Random.Range(0f, 1f) < 0.05f)
+        {
+            foreach (var biome in _planet.biomes)
+            {
+                biome.CalcDistanceToPlayer(eggboy.transform.position);
+            }
         }
     }
 
@@ -47,7 +63,6 @@ public class TimeController : MonoBehaviour
             Vector3 randomPolar = new Vector3(1f, Random.Range(-3.14f, 3.14f), Random.Range(-20f, 3.14f));
 
             int randomPlant = Mathf.FloorToInt(Random.Range(0f, plantOptions.Length));
-            Debug.Log(randomPlant);
             PlacePlant.placeNew(randomPolar, _planet, plantOptions[randomPlant]);
         }
     }
@@ -60,7 +75,6 @@ public class TimeController : MonoBehaviour
     public void SetSelectedPlant(int selectionInt)
     {
         selectedPlantInt = selectionInt;
-        Debug.Log($"New Selected plant: {selectedPlantInt}, {plantOptions[selectedPlantInt]}");
     }
 
     public void ResetWorld()

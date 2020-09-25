@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02986704605de5e4c861f99d0c1b097d, type: 3}
   m_Name: Rain Settings
   m_EditorClassIdentifier: 
-  foldout: 0
+  foldout: 1
   size: 1
   frequency: 0.462
   offset: {x: 9.3, y: 0, z: 0}
-  octaves: 14
+  octaves: 6
   persistence: 0.736
   lacunarity: 0.42
   minValue: -1

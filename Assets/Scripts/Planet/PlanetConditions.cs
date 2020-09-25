@@ -7,12 +7,7 @@ using UnityEngine;
 [Serializable]
 public class PlanetConditions
 {
-
-    public TerrainSettings terrainNoiseSettings;
-    public RainSettings rainNoiseSettings;
-    public TempSettings tempSettings;
-
-    public float planetRadius = 75f;
+    public PlanetSettings planetSettings;
 
     // Define the biomes based on temp and rainfall data; 
     // temp in Average deg. C, 
@@ -24,8 +19,8 @@ public class PlanetConditions
         BiomeConditions biomeConditions = new BiomeConditions();
 
         biomeConditions.Altitude = biome._polarcoordinates[0];
-        biomeConditions.Rainfall = rainNoiseSettings.calcRain(biome._worldcoordinates, planetRadius);
-        biomeConditions.Temperature = tempSettings.calcTemp(biome._worldcoordinates, planetRadius);
+        biomeConditions.Rainfall = planetSettings.rainSettings.calcRain(biome._worldcoordinates, planetSettings.planetRadius);
+        biomeConditions.Temperature = planetSettings.tempSettings.calcTemp(biome._worldcoordinates, planetSettings.planetRadius);
         biomeConditions.BiomeID = biomeConditions.CalcBiome(biomeConditions.Temperature, biomeConditions.Rainfall);
         biomeConditions.Biome = biomeConditions.LookupBiome(biomeConditions.BiomeID);
 

@@ -16,6 +16,7 @@ MonoBehaviour:
   numTerrainPoints: 23
   numBiomePoints: 12
   planetRadius: 75
+  oceanLevel: 70
   tempSettings: {fileID: 11400000, guid: f84fe305edcc6e846a22fe765b6d96df, type: 2}
   terrainSettings: {fileID: 11400000, guid: cb8dffcbbdc5c9c4daba93bc48d0afec, type: 2}
   rainSettings: {fileID: 11400000, guid: f20ad19f956d6a74786fa888d2f5e7e9, type: 2}
