@@ -14,13 +14,18 @@ public class PlantSettings : ScriptableObject {
     public AnimationCurve temperatureAffinity;
     public AnimationCurve rainfallAffinity;
     public AnimationCurve illuminationAffinity;
+    public AnimationCurve ageAffinity;
 
     public float deathThreshold;
+    public float sickThreshold = 0.3f;
     public float reproductionThreshold;
 
-    public float calcAffinity(float temperature, float rainfall, float illumination)
+    public float calcAffinity(float temperature, float rainfall, float illumination, float age)
     {
-        return temperatureAffinity.Evaluate(temperature) * rainfallAffinity.Evaluate(rainfall) * illuminationAffinity.Evaluate(illumination);
+        return temperatureAffinity.Evaluate(temperature)
+            * rainfallAffinity.Evaluate(rainfall)
+            * illuminationAffinity.Evaluate(illumination)
+            * ageAffinity.Evaluate(age);
     }
 
 }

@@ -9,9 +9,6 @@ public class TimeController : MonoBehaviour
     public Planet planetPrefab;
     public GameObject eggboy;
 
-    [Range(0,100f)]
-    public float timeScale = 1f;
-
     private Mesh _planetMesh;
 
     public int n_plants;
@@ -27,9 +24,9 @@ public class TimeController : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale != timeScale)
+        if (eggboy.transform.localScale[0] != GlobalSingletons.Instance.spaceScale)
         {
-            Time.timeScale = timeScale;
+            eggboy.transform.localScale = Vector3.one * GlobalSingletons.Instance.spaceScale;
         }
 
         if (Input.GetKeyDown(KeyCode.E))

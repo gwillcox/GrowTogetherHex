@@ -96,17 +96,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.502079
       value: 1
-      inSlope: -1.0116383
-      outSlope: -1.0116383
+      inSlope: -2.009841
+      outSlope: -2.009841
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.99724287
-      value: 0.49907327
-      inSlope: -1.0116383
-      outSlope: -1.0116383
+      time: 1.0005056
+      value: -0.0017581433
+      inSlope: -2.009841
+      outSlope: -2.009841
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -114,5 +114,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ageAffinity:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.21640015
+      value: 1
+      inSlope: -0.0096623525
+      outSlope: -0.0096623525
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100.44295
+      value: 0.027393937
+      inSlope: -0.0096623525
+      outSlope: -0.0096623525
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   deathThreshold: 0.1
+  sickThreshold: 0.3
   reproductionThreshold: 0.5

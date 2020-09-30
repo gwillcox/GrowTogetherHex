@@ -13,18 +13,20 @@ public class movement : MonoBehaviour
 
     private Rigidbody rigidBody;
 
+    public Action<Vector3> PlayerMoved; 
+
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponentInChildren<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(float forward, float rotation)
     {
+
         rigidBody.AddForce(new Vector3(0, -1, 0));
-        float forwardMovement = Input.GetAxis("Vertical") * Time.deltaTime / Time.timeScale;
-        float rotationAmount = Input.GetAxis("Horizontal") * Time.deltaTime / Time.timeScale;
+        float forwardMovement = forward * Time.deltaTime * GlobalSingletons.Instance.spaceScale;
+        float rotationAmount = rotation * Time.deltaTime;
 
         if (flatWorld)
         {
@@ -39,5 +41,11 @@ public class movement : MonoBehaviour
             world.transform.Rotate(world.transform.InverseTransformVector(new Vector3(0, -1, 0)), rotationAmount * turnSpeed);
         }
 
+        PlayerMoved?.Invoke(transform.position - world.transform.position);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 }

@@ -78,7 +78,8 @@ public class Biome : MonoBehaviour
         foreach (var deadPlant in _plantsToKill)
         {
             _plants.Remove(deadPlant);
-            Destroy(deadPlant);
+            Destroy(deadPlant.gameObject);
+            Debug.Log($"Killed a plant: {deadPlant.name}");
         }
         // Reset the plantsToKill array
         _plantsToKill = new List<Plant>();

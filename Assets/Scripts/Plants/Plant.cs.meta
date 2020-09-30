@@ -3,7 +3,12 @@ guid: 4843a18d8aa4bde4db4b69528057f979
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - plantHealthyMaterial: {fileID: 2100000, guid: af65c0942482e46aeb256506726ff0f7,
+      type: 2}
+  - plantSickMaterial: {fileID: 2100000, guid: ecba562ce91756041a6863edaa7bfc38, type: 2}
+  - plantDyingMaterial: {fileID: 2100000, guid: 8bf3e223b0f461c45b674a4002a5e830,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -99,5 +99,36 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  illuminationAffinity:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ageAffinity:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.21640015
+      value: 1
+      inSlope: -0.0096623525
+      outSlope: -0.0096623525
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100.44295
+      value: 0.027393937
+      inSlope: -0.0096623525
+      outSlope: -0.0096623525
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   deathThreshold: 0.1
+  sickThreshold: 0.3
   reproductionThreshold: 0.5

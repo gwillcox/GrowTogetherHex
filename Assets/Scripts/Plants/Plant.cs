@@ -9,14 +9,20 @@ public class Plant: MonoBehaviour
     Biome _biome;
     Planet _planet;
     private Mesh plantMesh;
+    private MeshRenderer plantMeshRenderer;
     private Vector3[] plantVertexArray;
     private Transform plantMeshTransform;
 
-    private float scale = 1f;
+    public Material plantHealthyMaterial;
+    public Material plantSickMaterial;
+    public Material plantDyingMaterial;
 
+    public float scale = 1f;
     public int meshInt;
     public float illumination = 0f;
     public float affinity;
+    public float health = 1f;
+    public float age = 0f;
 
     private float directLight = 0f;
     private float indirectLight = 0f;
@@ -41,26 +47,43 @@ public class Plant: MonoBehaviour
         gameObject.transform.localScale = Vector3.one * scale; // make the plant small to start. 
 
         plantMesh = gameObject.GetComponentInChildren<MeshFilter>().mesh;
+        plantMeshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
         plantMeshTransform = transform.GetChild(0).GetComponent<Transform>(); // Assumes that every plant has exactly one child transform.
-        Debug.Log(plantMeshTransform.localRotation);
 
         plantVertexArray = plantMesh.vertices;
         UpdateRandomVertex();
     }
 
+    private void IncrementAge()
+    {
+        age += Time.deltaTime * GlobalSingletons.Instance.timeScale / 60f;
+    }
 
     public BiomeConditions ProcessBiomeConditions(BiomeConditions conditions)
     {
+        IncrementAge();
         illumination = CalcRayShade();
 
-        affinity = _plantSettings.calcAffinity(conditions.Temperature, conditions.Rainfall, illumination);
+        affinity = _plantSettings.calcAffinity(conditions.Temperature, conditions.Rainfall, illumination, age);
+        health = RecalculateHealth();
 
-        if (affinity < _plantSettings.deathThreshold)
+        if (health < _plantSettings.deathThreshold)
         {
             this.KillPlant();
         }
+        else if (health < _plantSettings.sickThreshold)
+        {
+            if (plantMeshRenderer.sharedMaterial != plantSickMaterial)
+            {
+                this.DisplaySickness();
+            }
+        }
         else
         {
+            if (plantMeshRenderer.sharedMaterial != plantHealthyMaterial)
+            {
+                this.DisplayHealth();
+            }
             this.Grow();
         }
         
@@ -69,6 +92,22 @@ public class Plant: MonoBehaviour
             this.Reproduce();
         }
         return null;
+    }
+
+    private void DisplayHealth()
+    {
+        plantMeshRenderer.sharedMaterial = plantHealthyMaterial;
+    }
+
+    private void DisplaySickness()
+    {
+        plantMeshRenderer.sharedMaterial = plantSickMaterial;
+    }
+
+    private float RecalculateHealth()
+    { 
+        // Calculate health using a 99% - 1% scaling. 
+        return health * .95f + affinity * 0.05f;
     }
 
     public float CalcRayShade()
@@ -110,7 +149,7 @@ public class Plant: MonoBehaviour
 
     private void Grow()
     { 
-        scale = Mathf.Min(scale, 2f) * (1 + affinity * .03f * Time.deltaTime);
+        scale = Mathf.Min(scale, 2f) * (1 + affinity * .03f * Time.deltaTime * GlobalSingletons.Instance.timeScale);
         this.transform.localScale = Vector3.one * scale;
 /*
         // Iterate over plants. If any are too close, destroy them! 
@@ -140,6 +179,7 @@ public class Plant: MonoBehaviour
     public void KillPlant()
     {
         _biome.KillPlant(this);
+
     }
 
     void OnDrawGizmosSelected()
@@ -162,7 +202,7 @@ public class Plant: MonoBehaviour
             }
         }
         Gizmos.DrawWireSphere(transform.position, scale);
-        Handles.Label(transform.position + new Vector3(scale, 0, 0), $"Illumination: {illumination}");
+        Handles.Label(transform.position - scale * Vector3.one, $"Illumination: {illumination} \n Health: {health}");
 
         // Calculates and plots whether the plant can see the sun. 
         Vector3 selectedVertex = testMeshVertex;
